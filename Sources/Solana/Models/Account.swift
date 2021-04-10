@@ -9,8 +9,8 @@ import Foundation
 import ed25519swift
 
 public struct Account: Codable {
-    let publicKey: [UInt8]
-    let privateKey: [UInt8]
+    public let publicKey: [UInt8]
+    public let privateKey: [UInt8]
     
     public static func newAccount() -> Account {
         let keys = Ed25519.generateKeyPair()
@@ -26,7 +26,7 @@ public struct Account: Codable {
 }
 
 public struct AccountMeta: Codable {
-    let publicKey: [UInt8]
-    let isSigner: Bool
-    let isWritable: Bool
+    public let publicKey: [UInt8]
+    public let isSigner: Bool
+    public let isWritable: Bool
 }
