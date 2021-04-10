@@ -57,3 +57,30 @@ solana.getAccountInfo(pubkey: pubkey) { (result) in
 ## Example usage
 
 [Demo app](https://github.com/crewshin/solana-swift-demo-app)
+
+
+
+
+## WIP Status
+
+I'm basically going down the list of methods from the [JSON RPC](https://docs.solana.com/developing/clients/jsonrpc-api#methods)
+
+Right now I've implemented the foundational stuff and am n this commit, I've done a first pass on:
+
+```swift
+getAccountInfo
+getBalance
+getBlockCommitment
+getBlockTime
+getClusterNodes
+getConfirmedBlock
+getConfirmedBlocks
+getConfirmedBlocksWithLimit
+getConfirmedSignaturesForAddress
+getConfirmedSignaturesForAddress2
+getConfirmedTransaction
+getEpochInfo
+```
+
+
+
