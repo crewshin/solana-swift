@@ -1,3 +1,5 @@
+![](https://github.com/crewshin/solana-swift/blob/main/Resources/Logo.png)
+
 # Solana-Swift
 
 Solana Swift SDK (Based off https://docs.solana.com/developing/clients/jsonrpc-api).
