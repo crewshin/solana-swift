@@ -2,7 +2,7 @@
 
 Solana Swift SDK (Based off https://docs.solana.com/developing/clients/jsonrpc-api).
 
-This is actively **WIP** at the moment. PR's welcome!
+This is actively **WIP** at the moment. PR's welcome! [Development happening in the demo app repo](https://github.com/crewshin/solana-swift-demo-app)
 
 
 ## Getting Started
@@ -21,7 +21,16 @@ Supporting multiple dependency managers makes maintaining a library exponentiall
 `import Solana`
 
 Create an instance of Solana:
-`let solana = Solana(network: .main)` or `SolanaSockets(network: .main)`
+
+```swift
+let solana = Solana(network: .main)
+```
+
+or 
+
+```swift
+let solana = SolanaSockets(network: .main)
+```
 
 Then:
 
