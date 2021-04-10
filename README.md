@@ -18,7 +18,10 @@ Supporting multiple dependency managers makes maintaining a library exponentiall
 
 ## Usage
 
-`import Solana`
+```swift
+import Solana
+```
+
 
 Create an instance of Solana:
 
@@ -49,3 +52,8 @@ solana.getAccountInfo(pubkey: pubkey) { (result) in
 }
 
 ```
+
+
+## Example usage
+
+[Demo app](https://github.com/crewshin/solana-swift-demo-app)
