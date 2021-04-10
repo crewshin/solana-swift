@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Base58Swift",
+        "repositoryURL": "https://github.com/keefertaylor/Base58Swift",
+        "state": {
+          "branch": null,
+          "revision": "1c13ea6b07f1584660526f8bde3d4cc150e91acd",
+          "version": "2.1.14"
+        }
+      },
+      {
+        "package": "BigInt",
+        "repositoryURL": "https://github.com/attaswift/BigInt.git",
+        "state": {
+          "branch": null,
+          "revision": "889a1ecacd73ccc189c5cb29288048f186c44ed9",
+          "version": "5.2.1"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "5669f222e46c8134fb1f399c745fa6882b43532e",
+          "version": "1.3.8"
+        }
+      },
+      {
+        "package": "ed25519swift",
+        "repositoryURL": "https://github.com/pebble8888/ed25519swift",
+        "state": {
+          "branch": null,
+          "revision": "a13959fe706d4bdc22b16bd04824a81ece24e823",
+          "version": "1.2.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
