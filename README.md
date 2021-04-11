@@ -1,10 +1,10 @@
-![](https://github.com/crewshin/solana-swift/blob/main/Resources/Logo.png)
+![Repo image](https://github.com/crewshin/solana-swift/blob/main/Resources/Logo.png)
+
+# Solana-Swift
 
 ![Build & Test](https://github.com/crewshin/solana-swift/actions/workflows/build.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/crewshin/solana-swift/blob/main/LICENSE)
 [![swift-version](https://img.shields.io/badge/swift-5.1-brightgreen.svg)](https://github.com/apple/swift)
-
-# Solana-Swift
 
 Solana Swift SDK (Based off https://docs.solana.com/developing/clients/jsonrpc-api).
 

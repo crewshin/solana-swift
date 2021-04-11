@@ -6,10 +6,8 @@ import PackageDescription
 let package = Package(
     name: "Solana",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v12),
         .macOS(.v10_15),
-//        .tvOS(.v13),
-//        .watchOS(.v6),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -19,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/keefertaylor/Base58Swift", .upToNextMajor(from: "2.1.14")),
-        .package(url: "https://github.com/pebble8888/ed25519swift", .upToNextMajor(from: "1.2.5")),
+        .package(url: "https://github.com/crewshin/ed25519swift", .upToNextMajor(from: "1.2.5")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
