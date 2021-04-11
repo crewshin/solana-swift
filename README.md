@@ -60,12 +60,6 @@ solana.getAccountInfo(pubkey: pubkey) { (result) in
 ```
 
 
-## Example usage
-
-[Demo app](https://github.com/crewshin/solana-swift-demo-app)
-
-
-
 
 ## WIP Status
 
@@ -89,4 +83,5 @@ getEpochInfo
 ```
 
 
+Feel free to say hi on Discord: `crewshin#3286`
 
