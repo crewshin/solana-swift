@@ -1,8 +1,8 @@
 ![](https://github.com/crewshin/solana-swift/blob/main/Resources/Logo.png)
 
-https://github.com/crewshin/solana-swift/actions?query=workflow%3Abuild 
-https://github.com/crewshin/solana-swift/blob/master/LICENSE 
-https://github.com/apple/swift
+![Build & Test](https://github.com/crewshin/solana-swift/actions/workflows/build.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/crewshin/solana-swift/blob/main/LICENSE)
+[![swift-version](https://img.shields.io/badge/swift-5.1-brightgreen.svg)](https://github.com/apple/swift)
 
 # Solana-Swift
 
