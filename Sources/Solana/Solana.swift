@@ -30,11 +30,8 @@ public class Solana {
     
     // MARK: - Calls
     
-    /// Returns all information associated with the account of provided Pubkey
+    /// Returns all account information associated with the account of provided pubkey.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getaccountinfo
-    ///
-    /// - parameter request: GetAccountInfoRequest.
-    /// - Returns: Returns an blahhh blahh TODO.
     public func getAccountInfo(pubkey: String, completion: @escaping (Result<Networking.Response<GetAccountInfoResponse>, SolanaAPIError>) -> Void) {
         
         // Simple sanity checking.
@@ -68,6 +65,8 @@ public class Solana {
         }
     }
 
+    /// Returns the balance of the provided pubkeys.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getbalance
     public func getBalance(pubkeys: [String], completion: @escaping (Result<Networking.Response<GetBalanceResponse>, SolanaAPIError>) -> Void) {
         
         // Simple sanity checking.
@@ -98,6 +97,8 @@ public class Solana {
         }
     }
     
+    /// Returns the block commitment for the provided blocks.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getblockcommitment
     public func getBlockCommitment(blocks: [UInt64], completion: @escaping (Result<Networking.Response<GetBlockCommitmentResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
@@ -122,6 +123,8 @@ public class Solana {
         }
     }
     
+    /// Returns the block time for the provided blocks.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getblocktime
     public func getBlockTime(blocks: [UInt64], completion: @escaping (Result<Networking.Response<GetBlockTimeResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
@@ -146,6 +149,8 @@ public class Solana {
         }
     }
     
+    /// Returns the cluster nodes.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getclusternodes
     public func getClusterNodes(completion: @escaping (Result<Networking.Response<GetClusterNodesResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
@@ -169,7 +174,9 @@ public class Solana {
         }
     }
     
-    /// Only json is supported at this time.
+    /// Returns the block for the provided slot.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedblock
+    /// NOTE: Only json encoding is supported at this time.
     public func getConfirmedBlock(slot: UInt64, encoding: Encoding = .json, completion: @escaping (Result<Networking.Response<GetConfirmedBlockResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
@@ -197,6 +204,8 @@ public class Solana {
         }
     }
     
+    /// Returns the confirmed blocks for the provided start/end slots.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedblocks
     public func getConfirmedBlocks(startSlot: UInt64, endSlot: UInt64? = nil, completion: @escaping (Result<Networking.Response<GetConfirmedBlocksResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
@@ -224,6 +233,8 @@ public class Solana {
         }
     }
     
+    /// Returns the confirmed blocks from the provided start slot with limit.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedblockswithlimit
     public func getConfirmedBlocksWithLimit(startSlot: UInt64, limit: UInt64, completion: @escaping (Result<Networking.Response<GetConfirmedBlocksWithLimitResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
@@ -251,6 +262,8 @@ public class Solana {
         }
     }
     
+    /// Returns the confirmed signatures for the given params.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedsignaturesforaddress
     public func getConfirmedSignaturesForAddress(address: String, startSlot: UInt64, endSlot: UInt64, completion: @escaping (Result<Networking.Response<GetConfirmedSignaturesForAddressResponse>, SolanaAPIError>) -> Void) {
         
         // Simple sanity checking.
@@ -285,6 +298,8 @@ public class Solana {
         }
     }
     
+    /// Returns the confirmed signatures for the given params.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedsignaturesforaddress2
     public func getConfirmedSignaturesForAddress2(address: String, config: GetConfirmedSignaturesForAddress2Config? = nil, completion: @escaping (Result<Networking.Response<GetConfirmedSignaturesForAddress2Response>, SolanaAPIError>) -> Void) {
         
         // Simple sanity checking.
@@ -322,6 +337,8 @@ public class Solana {
         }
     }
     
+    /// Returns the confirmed transaction.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedtransaction
     public func getConfirmedTransaction(transaction: String, encoding: Encoding? = .json, completion: @escaping (Result<Networking.Response<GetConfirmedTransactionResponse>, SolanaAPIError>) -> Void) {
         
         // Simple sanity checking.
@@ -355,6 +372,8 @@ public class Solana {
         }
     }
     
+    /// Returns the epoch info for the provided commitment.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getepochinfo
     public func getEpochInfo(commitment: Commitment? = nil, completion: @escaping (Result<Networking.Response<GetEpochInfoResponse>, SolanaAPIError>) -> Void) {
         
         let body: [String: Any] = [
