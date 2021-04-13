@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E0CE92626238342006F0E8E /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90026238342006F0E8E /* Double+.swift */; };
+		7E0CE92726238342006F0E8E /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90126238342006F0E8E /* Int+.swift */; };
+		7E0CE92826238342006F0E8E /* JSON+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90226238342006F0E8E /* JSON+.swift */; };
+		7E0CE92926238342006F0E8E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90326238342006F0E8E /* String+.swift */; };
+		7E0CE92A26238342006F0E8E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90526238342006F0E8E /* Account.swift */; };
+		7E0CE92B26238342006F0E8E /* Commitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90626238342006F0E8E /* Commitment.swift */; };
+		7E0CE92C26238342006F0E8E /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90726238342006F0E8E /* Encoding.swift */; };
+		7E0CE92D26238342006F0E8E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90826238342006F0E8E /* Filter.swift */; };
+		7E0CE92E26238342006F0E8E /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90926238342006F0E8E /* Instruction.swift */; };
+		7E0CE92F26238342006F0E8E /* GetAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90B26238342006F0E8E /* GetAccountInfo.swift */; };
+		7E0CE93026238342006F0E8E /* GetBalanace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90C26238342006F0E8E /* GetBalanace.swift */; };
+		7E0CE93126238342006F0E8E /* GetBlockCommitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90D26238342006F0E8E /* GetBlockCommitment.swift */; };
+		7E0CE93226238342006F0E8E /* GetBlockTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90E26238342006F0E8E /* GetBlockTime.swift */; };
+		7E0CE93326238342006F0E8E /* GetClusterNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90F26238342006F0E8E /* GetClusterNodes.swift */; };
+		7E0CE93426238342006F0E8E /* GetConfirmedBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91026238342006F0E8E /* GetConfirmedBlock.swift */; };
+		7E0CE93526238342006F0E8E /* GetConfirmedBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91126238342006F0E8E /* GetConfirmedBlocks.swift */; };
+		7E0CE93626238342006F0E8E /* GetConfirmedBlocksWithLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91226238342006F0E8E /* GetConfirmedBlocksWithLimit.swift */; };
+		7E0CE93726238342006F0E8E /* GetConfirmedSignaturesForAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91326238342006F0E8E /* GetConfirmedSignaturesForAddress.swift */; };
+		7E0CE93826238342006F0E8E /* GetConfirmedSignaturesForAddress2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91426238342006F0E8E /* GetConfirmedSignaturesForAddress2.swift */; };
+		7E0CE93926238342006F0E8E /* GetConfirmedTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91526238342006F0E8E /* GetConfirmedTransaction.swift */; };
+		7E0CE93A26238342006F0E8E /* GetEpochInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91626238342006F0E8E /* GetEpochInfo.swift */; };
+		7E0CE93B26238342006F0E8E /* SimulateTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91726238342006F0E8E /* SimulateTransaction.swift */; };
+		7E0CE93C26238342006F0E8E /* RewardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91826238342006F0E8E /* RewardType.swift */; };
+		7E0CE93D26238342006F0E8E /* RpcError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91926238342006F0E8E /* RpcError.swift */; };
+		7E0CE93E26238342006F0E8E /* TokenBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91A26238342006F0E8E /* TokenBalance.swift */; };
+		7E0CE93F26238342006F0E8E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91B26238342006F0E8E /* Transaction.swift */; };
+		7E0CE94026238342006F0E8E /* TransactionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91C26238342006F0E8E /* TransactionError.swift */; };
+		7E0CE94126238342006F0E8E /* ProgramSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91E26238342006F0E8E /* ProgramSubscribe.swift */; };
+		7E0CE94226238342006F0E8E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE91F26238342006F0E8E /* Network.swift */; };
+		7E0CE94326238342006F0E8E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92026238342006F0E8E /* Networking.swift */; };
+		7E0CE94426238342006F0E8E /* NetworkRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92126238342006F0E8E /* NetworkRequestType.swift */; };
+		7E0CE94526238342006F0E8E /* Solana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92226238342006F0E8E /* Solana.swift */; };
+		7E0CE94626238342006F0E8E /* SolanaErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92326238342006F0E8E /* SolanaErrors.swift */; };
+		7E0CE94726238342006F0E8E /* SolanaSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92426238342006F0E8E /* SolanaSockets.swift */; };
+		7E0CE94826238342006F0E8E /* WebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92526238342006F0E8E /* WebSockets.swift */; };
+		7E2EAEDE25FEC11900FE983E /* Base58Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E2EAEDD25FEC11900FE983E /* Base58Swift */; };
+		7E30FC6725FBBBFB0036597A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30FC6625FBBBFB0036597A /* ResultView.swift */; };
+		7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2025F9A0330066CA84 /* AppDelegate.swift */; };
+		7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2225F9A0330066CA84 /* SceneDelegate.swift */; };
+		7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2425F9A0330066CA84 /* ContentView.swift */; };
+		7E937B2725F9A0360066CA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2625F9A0360066CA84 /* Assets.xcassets */; };
+		7E937B2A25F9A0360066CA84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */; };
+		7E937B2D25F9A0360066CA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */; };
+		7E9A1F2525FEFD74003AC055 /* ed25519swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E9A1F2425FEFD74003AC055 /* ed25519swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E0CE90026238342006F0E8E /* Double+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		7E0CE90126238342006F0E8E /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		7E0CE90226238342006F0E8E /* JSON+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+.swift"; sourceTree = "<group>"; };
+		7E0CE90326238342006F0E8E /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		7E0CE90526238342006F0E8E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		7E0CE90626238342006F0E8E /* Commitment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commitment.swift; sourceTree = "<group>"; };
+		7E0CE90726238342006F0E8E /* Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
+		7E0CE90826238342006F0E8E /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		7E0CE90926238342006F0E8E /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		7E0CE90B26238342006F0E8E /* GetAccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAccountInfo.swift; sourceTree = "<group>"; };
+		7E0CE90C26238342006F0E8E /* GetBalanace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanace.swift; sourceTree = "<group>"; };
+		7E0CE90D26238342006F0E8E /* GetBlockCommitment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBlockCommitment.swift; sourceTree = "<group>"; };
+		7E0CE90E26238342006F0E8E /* GetBlockTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBlockTime.swift; sourceTree = "<group>"; };
+		7E0CE90F26238342006F0E8E /* GetClusterNodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetClusterNodes.swift; sourceTree = "<group>"; };
+		7E0CE91026238342006F0E8E /* GetConfirmedBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConfirmedBlock.swift; sourceTree = "<group>"; };
+		7E0CE91126238342006F0E8E /* GetConfirmedBlocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConfirmedBlocks.swift; sourceTree = "<group>"; };
+		7E0CE91226238342006F0E8E /* GetConfirmedBlocksWithLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConfirmedBlocksWithLimit.swift; sourceTree = "<group>"; };
+		7E0CE91326238342006F0E8E /* GetConfirmedSignaturesForAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConfirmedSignaturesForAddress.swift; sourceTree = "<group>"; };
+		7E0CE91426238342006F0E8E /* GetConfirmedSignaturesForAddress2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConfirmedSignaturesForAddress2.swift; sourceTree = "<group>"; };
+		7E0CE91526238342006F0E8E /* GetConfirmedTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConfirmedTransaction.swift; sourceTree = "<group>"; };
+		7E0CE91626238342006F0E8E /* GetEpochInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEpochInfo.swift; sourceTree = "<group>"; };
+		7E0CE91726238342006F0E8E /* SimulateTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateTransaction.swift; sourceTree = "<group>"; };
+		7E0CE91826238342006F0E8E /* RewardType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardType.swift; sourceTree = "<group>"; };
+		7E0CE91926238342006F0E8E /* RpcError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RpcError.swift; sourceTree = "<group>"; };
+		7E0CE91A26238342006F0E8E /* TokenBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenBalance.swift; sourceTree = "<group>"; };
+		7E0CE91B26238342006F0E8E /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		7E0CE91C26238342006F0E8E /* TransactionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionError.swift; sourceTree = "<group>"; };
+		7E0CE91E26238342006F0E8E /* ProgramSubscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramSubscribe.swift; sourceTree = "<group>"; };
+		7E0CE91F26238342006F0E8E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7E0CE92026238342006F0E8E /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7E0CE92126238342006F0E8E /* NetworkRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestType.swift; sourceTree = "<group>"; };
+		7E0CE92226238342006F0E8E /* Solana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solana.swift; sourceTree = "<group>"; };
+		7E0CE92326238342006F0E8E /* SolanaErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaErrors.swift; sourceTree = "<group>"; };
+		7E0CE92426238342006F0E8E /* SolanaSockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaSockets.swift; sourceTree = "<group>"; };
+		7E0CE92526238342006F0E8E /* WebSockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSockets.swift; sourceTree = "<group>"; };
+		7E30FC6625FBBBFB0036597A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E937B2025F9A0330066CA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E937B2225F9A0330066CA84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7E937B2425F9A0330066CA84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7E937B2625F9A0360066CA84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7E937B2C25F9A0360066CA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E937B2E25F9A0360066CA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E937B1A25F9A0330066CA84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9A1F2525FEFD74003AC055 /* ed25519swift in Frameworks */,
+				7E2EAEDE25FEC11900FE983E /* Base58Swift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E0CE8FD26238342006F0E8E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CE8FE26238342006F0E8E /* Solana */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7E0CE8FE26238342006F0E8E /* Solana */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CE8FF26238342006F0E8E /* Extensions */,
+				7E0CE90426238342006F0E8E /* Models */,
+				7E0CE91F26238342006F0E8E /* Network.swift */,
+				7E0CE92026238342006F0E8E /* Networking.swift */,
+				7E0CE92126238342006F0E8E /* NetworkRequestType.swift */,
+				7E0CE92226238342006F0E8E /* Solana.swift */,
+				7E0CE92326238342006F0E8E /* SolanaErrors.swift */,
+				7E0CE92426238342006F0E8E /* SolanaSockets.swift */,
+				7E0CE92526238342006F0E8E /* WebSockets.swift */,
+			);
+			path = Solana;
+			sourceTree = "<group>";
+		};
+		7E0CE8FF26238342006F0E8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CE90026238342006F0E8E /* Double+.swift */,
+				7E0CE90126238342006F0E8E /* Int+.swift */,
+				7E0CE90226238342006F0E8E /* JSON+.swift */,
+				7E0CE90326238342006F0E8E /* String+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7E0CE90426238342006F0E8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CE90526238342006F0E8E /* Account.swift */,
+				7E0CE90626238342006F0E8E /* Commitment.swift */,
+				7E0CE90726238342006F0E8E /* Encoding.swift */,
+				7E0CE90826238342006F0E8E /* Filter.swift */,
+				7E0CE90926238342006F0E8E /* Instruction.swift */,
+				7E0CE90A26238342006F0E8E /* Requests and Responses */,
+				7E0CE91826238342006F0E8E /* RewardType.swift */,
+				7E0CE91926238342006F0E8E /* RpcError.swift */,
+				7E0CE91A26238342006F0E8E /* TokenBalance.swift */,
+				7E0CE91B26238342006F0E8E /* Transaction.swift */,
+				7E0CE91C26238342006F0E8E /* TransactionError.swift */,
+				7E0CE91D26238342006F0E8E /* WebSockets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7E0CE90A26238342006F0E8E /* Requests and Responses */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CE90B26238342006F0E8E /* GetAccountInfo.swift */,
+				7E0CE90C26238342006F0E8E /* GetBalanace.swift */,
+				7E0CE90D26238342006F0E8E /* GetBlockCommitment.swift */,
+				7E0CE90E26238342006F0E8E /* GetBlockTime.swift */,
+				7E0CE90F26238342006F0E8E /* GetClusterNodes.swift */,
+				7E0CE91026238342006F0E8E /* GetConfirmedBlock.swift */,
+				7E0CE91126238342006F0E8E /* GetConfirmedBlocks.swift */,
+				7E0CE91226238342006F0E8E /* GetConfirmedBlocksWithLimit.swift */,
+				7E0CE91326238342006F0E8E /* GetConfirmedSignaturesForAddress.swift */,
+				7E0CE91426238342006F0E8E /* GetConfirmedSignaturesForAddress2.swift */,
+				7E0CE91526238342006F0E8E /* GetConfirmedTransaction.swift */,
+				7E0CE91626238342006F0E8E /* GetEpochInfo.swift */,
+				7E0CE91726238342006F0E8E /* SimulateTransaction.swift */,
+			);
+			path = "Requests and Responses";
+			sourceTree = "<group>";
+		};
+		7E0CE91D26238342006F0E8E /* WebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CE91E26238342006F0E8E /* ProgramSubscribe.swift */,
+			);
+			path = WebSockets;
+			sourceTree = "<group>";
+		};
+		7E937B1425F9A0330066CA84 = {
+			isa = PBXGroup;
+			children = (
+				7E0CE8FD26238342006F0E8E /* Sources */,
+				7E937B1F25F9A0330066CA84 /* SolanaDemoApp */,
+				7E937B1E25F9A0330066CA84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E937B1E25F9A0330066CA84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E937B1F25F9A0330066CA84 /* SolanaDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				7E937B2025F9A0330066CA84 /* AppDelegate.swift */,
+				7E937B2225F9A0330066CA84 /* SceneDelegate.swift */,
+				7E937B2425F9A0330066CA84 /* ContentView.swift */,
+				7E30FC6625FBBBFB0036597A /* ResultView.swift */,
+				7E937B2625F9A0360066CA84 /* Assets.xcassets */,
+				7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */,
+				7E937B2E25F9A0360066CA84 /* Info.plist */,
+				7E937B2825F9A0360066CA84 /* Preview Content */,
+			);
+			path = SolanaDemoApp;
+			sourceTree = "<group>";
+		};
+		7E937B2825F9A0360066CA84 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E937B1C25F9A0330066CA84 /* SolanaDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E937B3125F9A0360066CA84 /* Build configuration list for PBXNativeTarget "SolanaDemoApp" */;
+			buildPhases = (
+				7E937B1925F9A0330066CA84 /* Sources */,
+				7E937B1A25F9A0330066CA84 /* Frameworks */,
+				7E937B1B25F9A0330066CA84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SolanaDemoApp;
+			packageProductDependencies = (
+				7E2EAEDD25FEC11900FE983E /* Base58Swift */,
+				7E9A1F2425FEFD74003AC055 /* ed25519swift */,
+			);
+			productName = SolanaDemoApp;
+			productReference = 7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E937B1525F9A0330066CA84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					7E937B1C25F9A0330066CA84 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 7E937B1825F9A0330066CA84 /* Build configuration list for PBXProject "SolanaDemoApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E937B1425F9A0330066CA84;
+			packageReferences = (
+				7E2EAEDC25FEC11900FE983E /* XCRemoteSwiftPackageReference "Base58Swift" */,
+				7E9A1F2325FEFD74003AC055 /* XCRemoteSwiftPackageReference "ed25519swift" */,
+			);
+			productRefGroup = 7E937B1E25F9A0330066CA84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E937B1C25F9A0330066CA84 /* SolanaDemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E937B1B25F9A0330066CA84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E937B2D25F9A0360066CA84 /* LaunchScreen.storyboard in Resources */,
+				7E937B2A25F9A0360066CA84 /* Preview Assets.xcassets in Resources */,
+				7E937B2725F9A0360066CA84 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E937B1925F9A0330066CA84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E0CE93826238342006F0E8E /* GetConfirmedSignaturesForAddress2.swift in Sources */,
+				7E0CE93626238342006F0E8E /* GetConfirmedBlocksWithLimit.swift in Sources */,
+				7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */,
+				7E0CE92D26238342006F0E8E /* Filter.swift in Sources */,
+				7E0CE94826238342006F0E8E /* WebSockets.swift in Sources */,
+				7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */,
+				7E0CE94226238342006F0E8E /* Network.swift in Sources */,
+				7E0CE92926238342006F0E8E /* String+.swift in Sources */,
+				7E0CE93B26238342006F0E8E /* SimulateTransaction.swift in Sources */,
+				7E0CE93526238342006F0E8E /* GetConfirmedBlocks.swift in Sources */,
+				7E0CE94526238342006F0E8E /* Solana.swift in Sources */,
+				7E0CE93D26238342006F0E8E /* RpcError.swift in Sources */,
+				7E0CE93726238342006F0E8E /* GetConfirmedSignaturesForAddress.swift in Sources */,
+				7E30FC6725FBBBFB0036597A /* ResultView.swift in Sources */,
+				7E0CE94626238342006F0E8E /* SolanaErrors.swift in Sources */,
+				7E0CE94126238342006F0E8E /* ProgramSubscribe.swift in Sources */,
+				7E0CE92B26238342006F0E8E /* Commitment.swift in Sources */,
+				7E0CE92F26238342006F0E8E /* GetAccountInfo.swift in Sources */,
+				7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */,
+				7E0CE93F26238342006F0E8E /* Transaction.swift in Sources */,
+				7E0CE94026238342006F0E8E /* TransactionError.swift in Sources */,
+				7E0CE93026238342006F0E8E /* GetBalanace.swift in Sources */,
+				7E0CE94326238342006F0E8E /* Networking.swift in Sources */,
+				7E0CE93326238342006F0E8E /* GetClusterNodes.swift in Sources */,
+				7E0CE92A26238342006F0E8E /* Account.swift in Sources */,
+				7E0CE92C26238342006F0E8E /* Encoding.swift in Sources */,
+				7E0CE93126238342006F0E8E /* GetBlockCommitment.swift in Sources */,
+				7E0CE93E26238342006F0E8E /* TokenBalance.swift in Sources */,
+				7E0CE93426238342006F0E8E /* GetConfirmedBlock.swift in Sources */,
+				7E0CE93226238342006F0E8E /* GetBlockTime.swift in Sources */,
+				7E0CE92E26238342006F0E8E /* Instruction.swift in Sources */,
+				7E0CE93A26238342006F0E8E /* GetEpochInfo.swift in Sources */,
+				7E0CE92626238342006F0E8E /* Double+.swift in Sources */,
+				7E0CE94726238342006F0E8E /* SolanaSockets.swift in Sources */,
+				7E0CE93926238342006F0E8E /* GetConfirmedTransaction.swift in Sources */,
+				7E0CE92826238342006F0E8E /* JSON+.swift in Sources */,
+				7E0CE94426238342006F0E8E /* NetworkRequestType.swift in Sources */,
+				7E0CE92726238342006F0E8E /* Int+.swift in Sources */,
+				7E0CE93C26238342006F0E8E /* RewardType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E937B2C25F9A0360066CA84 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E937B2F25F9A0360066CA84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7E937B3025F9A0360066CA84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E937B3225F9A0360066CA84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SolanaDemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 634BMM2SZM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SolanaDemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.genecrucean.SolanaDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E937B3325F9A0360066CA84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SolanaDemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 634BMM2SZM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SolanaDemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.genecrucean.SolanaDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E937B1825F9A0330066CA84 /* Build configuration list for PBXProject "SolanaDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E937B2F25F9A0360066CA84 /* Debug */,
+				7E937B3025F9A0360066CA84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E937B3125F9A0360066CA84 /* Build configuration list for PBXNativeTarget "SolanaDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E937B3225F9A0360066CA84 /* Debug */,
+				7E937B3325F9A0360066CA84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7E2EAEDC25FEC11900FE983E /* XCRemoteSwiftPackageReference "Base58Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/keefertaylor/Base58Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.14;
+			};
+		};
+		7E9A1F2325FEFD74003AC055 /* XCRemoteSwiftPackageReference "ed25519swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pebble8888/ed25519swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7E2EAEDD25FEC11900FE983E /* Base58Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E2EAEDC25FEC11900FE983E /* XCRemoteSwiftPackageReference "Base58Swift" */;
+			productName = Base58Swift;
+		};
+		7E9A1F2425FEFD74003AC055 /* ed25519swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E9A1F2325FEFD74003AC055 /* XCRemoteSwiftPackageReference "ed25519swift" */;
+			productName = ed25519swift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7E937B1525F9A0330066CA84 /* Project object */;
+}
