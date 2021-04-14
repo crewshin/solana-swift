@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/keefertaylor/Base58Swift", .upToNextMajor(from: "2.1.14")),
-        .package(url: "https://github.com/crewshin/ed25519swift", .upToNextMajor(from: "1.2.5")),
+        .package(url: "https://github.com/crewshin/ed25519swift", .upToNextMajor(from: "1.2.6")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

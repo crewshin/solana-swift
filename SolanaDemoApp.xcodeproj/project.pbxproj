@@ -42,15 +42,15 @@
 		7E0CE94626238342006F0E8E /* SolanaErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92326238342006F0E8E /* SolanaErrors.swift */; };
 		7E0CE94726238342006F0E8E /* SolanaSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92426238342006F0E8E /* SolanaSockets.swift */; };
 		7E0CE94826238342006F0E8E /* WebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE92526238342006F0E8E /* WebSockets.swift */; };
-		7E2EAEDE25FEC11900FE983E /* Base58Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E2EAEDD25FEC11900FE983E /* Base58Swift */; };
 		7E30FC6725FBBBFB0036597A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30FC6625FBBBFB0036597A /* ResultView.swift */; };
+		7E6DAE9B2627256700A6F118 /* Base58Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6DAE9A2627256700A6F118 /* Base58Swift */; };
+		7E6DAE9F2627259500A6F118 /* ed25519swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6DAE9E2627259500A6F118 /* ed25519swift */; };
 		7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2025F9A0330066CA84 /* AppDelegate.swift */; };
 		7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2225F9A0330066CA84 /* SceneDelegate.swift */; };
 		7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2425F9A0330066CA84 /* ContentView.swift */; };
 		7E937B2725F9A0360066CA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2625F9A0360066CA84 /* Assets.xcassets */; };
 		7E937B2A25F9A0360066CA84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */; };
 		7E937B2D25F9A0360066CA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */; };
-		7E9A1F2525FEFD74003AC055 /* ed25519swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E9A1F2425FEFD74003AC055 /* ed25519swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,8 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E9A1F2525FEFD74003AC055 /* ed25519swift in Frameworks */,
-				7E2EAEDE25FEC11900FE983E /* Base58Swift in Frameworks */,
+				7E6DAE9F2627259500A6F118 /* ed25519swift in Frameworks */,
+				7E6DAE9B2627256700A6F118 /* Base58Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +252,8 @@
 			);
 			name = SolanaDemoApp;
 			packageProductDependencies = (
-				7E2EAEDD25FEC11900FE983E /* Base58Swift */,
-				7E9A1F2425FEFD74003AC055 /* ed25519swift */,
+				7E6DAE9A2627256700A6F118 /* Base58Swift */,
+				7E6DAE9E2627259500A6F118 /* ed25519swift */,
 			);
 			productName = SolanaDemoApp;
 			productReference = 7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */;
@@ -283,8 +283,8 @@
 			);
 			mainGroup = 7E937B1425F9A0330066CA84;
 			packageReferences = (
-				7E2EAEDC25FEC11900FE983E /* XCRemoteSwiftPackageReference "Base58Swift" */,
-				7E9A1F2325FEFD74003AC055 /* XCRemoteSwiftPackageReference "ed25519swift" */,
+				7E6DAE992627256700A6F118 /* XCRemoteSwiftPackageReference "Base58Swift" */,
+				7E6DAE9D2627259500A6F118 /* XCRemoteSwiftPackageReference "ed25519swift" */,
 			);
 			productRefGroup = 7E937B1E25F9A0330066CA84 /* Products */;
 			projectDirPath = "";
@@ -551,7 +551,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7E2EAEDC25FEC11900FE983E /* XCRemoteSwiftPackageReference "Base58Swift" */ = {
+		7E6DAE992627256700A6F118 /* XCRemoteSwiftPackageReference "Base58Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/keefertaylor/Base58Swift";
 			requirement = {
@@ -559,25 +559,25 @@
 				minimumVersion = 2.1.14;
 			};
 		};
-		7E9A1F2325FEFD74003AC055 /* XCRemoteSwiftPackageReference "ed25519swift" */ = {
+		7E6DAE9D2627259500A6F118 /* XCRemoteSwiftPackageReference "ed25519swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pebble8888/ed25519swift";
+			repositoryURL = "https://github.com/crewshin/ed25519swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.5;
+				minimumVersion = 1.2.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7E2EAEDD25FEC11900FE983E /* Base58Swift */ = {
+		7E6DAE9A2627256700A6F118 /* Base58Swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7E2EAEDC25FEC11900FE983E /* XCRemoteSwiftPackageReference "Base58Swift" */;
+			package = 7E6DAE992627256700A6F118 /* XCRemoteSwiftPackageReference "Base58Swift" */;
 			productName = Base58Swift;
 		};
-		7E9A1F2425FEFD74003AC055 /* ed25519swift */ = {
+		7E6DAE9E2627259500A6F118 /* ed25519swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7E9A1F2325FEFD74003AC055 /* XCRemoteSwiftPackageReference "ed25519swift" */;
+			package = 7E6DAE9D2627259500A6F118 /* XCRemoteSwiftPackageReference "ed25519swift" */;
 			productName = ed25519swift;
 		};
 /* End XCSwiftPackageProductDependency section */

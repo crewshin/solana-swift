@@ -30,11 +30,11 @@
       },
       {
         "package": "ed25519swift",
-        "repositoryURL": "https://github.com/pebble8888/ed25519swift",
+        "repositoryURL": "https://github.com/crewshin/ed25519swift",
         "state": {
           "branch": null,
-          "revision": "a13959fe706d4bdc22b16bd04824a81ece24e823",
-          "version": "1.2.5"
+          "revision": "b14719cad9fa541a5ec9b3de5aff8e9c4cc6ea07",
+          "version": "1.2.6"
         }
       }
     ]
