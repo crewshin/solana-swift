@@ -20,12 +20,7 @@ public struct SimulateTransactionConfig: Codable {
 }
 
 // MARK: - Response
-public struct SimulateTransactionResponse: Codable {
-    let jsonrpc: String
-    let result: SimulateTransactionResult
-    let id: Int
-    let error: RpcError?
-}
+public typealias SimulateTransactionResponse = RPCResponse<SimulateTransactionResult>
 
 public struct SimulateTransactionResult: Codable {
     let context: SimulateTransactionContext

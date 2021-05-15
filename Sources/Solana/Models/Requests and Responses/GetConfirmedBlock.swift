@@ -8,12 +8,7 @@
 import Foundation
 
 // MARK: - Response
-public struct GetConfirmedBlockResponse: Codable {
-    let jsonrpc: String
-    let result: GetConfirmedBlockResult
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetConfirmedBlockResponse = RPCResponse<GetConfirmedBlockResult>
 
 public struct GetConfirmedBlockResult: Codable {
     let blockTime: Int64?

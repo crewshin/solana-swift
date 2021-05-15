@@ -14,12 +14,7 @@ public struct GetConfirmedSignaturesForAddress2Config: Codable {
 }
 
 // MARK: - Response
-public struct GetConfirmedSignaturesForAddress2Response: Codable {
-    let jsonrpc: String
-    let result: [GetConfirmedSignaturesForAddress2Result]
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetConfirmedSignaturesForAddress2Response = RPCResponse<[GetConfirmedSignaturesForAddress2Result]>
 
 public struct GetConfirmedSignaturesForAddress2Result: Codable {
     let blockTime: Int64?

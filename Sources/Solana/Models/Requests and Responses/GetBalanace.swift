@@ -8,12 +8,7 @@
 import Foundation
 
 // MARK: - Response
-public struct GetBalanceResponse: Codable {
-    let jsonrpc: String
-    let result: GetBalanceResult
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetBalanceResponse = RPCResponse<GetBalanceResult>
 
 public struct GetBalanceResult: Codable {
     let context: GetBalanceContext

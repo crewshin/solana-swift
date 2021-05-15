@@ -8,9 +8,4 @@
 import Foundation
 
 // MARK: - Response
-public struct GetConfirmedSignaturesForAddressResponse: Codable {
-    let jsonrpc: String
-    let result: [String]
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetConfirmedSignaturesForAddressResponse = RPCResponse<[String]>
