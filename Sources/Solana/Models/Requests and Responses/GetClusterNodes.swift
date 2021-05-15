@@ -8,12 +8,7 @@
 import Foundation
 
 // MARK: - Response
-public struct GetClusterNodesResponse: Codable {
-    let jsonrpc: String
-    let result: [GetClusterNodesResult]
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetClusterNodesResponse = RPCResponse<[GetClusterNodesResult]>
 
 public struct GetClusterNodesResult: Codable {
     let featureSet: UInt64?

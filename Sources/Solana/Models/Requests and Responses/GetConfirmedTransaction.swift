@@ -8,12 +8,7 @@
 import Foundation
 
 // MARK: - Response
-public struct GetConfirmedTransactionResponse: Codable {
-    let jsonrpc: String
-    let result: GetConfirmedTransactionResult?
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetConfirmedTransactionResponse = RPCResponse<GetConfirmedTransactionResult>
 
 public struct GetConfirmedTransactionResult: Codable {
     let slot: UInt64

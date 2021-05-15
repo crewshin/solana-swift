@@ -8,12 +8,7 @@
 import Foundation
 
 // MARK: - Response
-public struct GetBlockCommitmentResponse: Codable {
-    let jsonrpc: String
-    let result: GetBlockCommitmentResult
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetBlockCommitmentResponse = RPCResponse<GetBlockCommitmentResult>
 
 public struct GetBlockCommitmentResult: Codable {
     let commitment: [Int]?

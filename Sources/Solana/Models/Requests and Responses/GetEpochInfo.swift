@@ -8,14 +8,9 @@
 import Foundation
 
 // MARK: - Response
-public struct GetEpochInfoResponse: Codable {
-    let jsonrpc: String
-    let result: GetEpochInfoResult
-    let id: Int
-    let error: RpcError?
-}
+public typealias GetEpochInfoResponse = RPCResponse<GetEpochInfoResult>
 
-struct GetEpochInfoResult: Codable {
+public struct GetEpochInfoResult: Codable {
     let absoluteSlot: UInt64
     let blockHeight: UInt64
     let epoch: UInt64

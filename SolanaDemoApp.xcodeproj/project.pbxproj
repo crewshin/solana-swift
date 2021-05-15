@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06967D5A264F977B0066A104 /* RPCResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06967D59264F977B0066A104 /* RPCResponse.swift */; };
 		7E0CE92626238342006F0E8E /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90026238342006F0E8E /* Double+.swift */; };
 		7E0CE92726238342006F0E8E /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90126238342006F0E8E /* Int+.swift */; };
 		7E0CE92826238342006F0E8E /* JSON+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CE90226238342006F0E8E /* JSON+.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06967D59264F977B0066A104 /* RPCResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCResponse.swift; sourceTree = "<group>"; };
 		7E0CE90026238342006F0E8E /* Double+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		7E0CE90126238342006F0E8E /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		7E0CE90226238342006F0E8E /* JSON+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+.swift"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				7E0CE91526238342006F0E8E /* GetConfirmedTransaction.swift */,
 				7E0CE91626238342006F0E8E /* GetEpochInfo.swift */,
 				7E0CE91726238342006F0E8E /* SimulateTransaction.swift */,
+				06967D59264F977B0066A104 /* RPCResponse.swift */,
 			);
 			path = "Requests and Responses";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				7E0CE93026238342006F0E8E /* GetBalanace.swift in Sources */,
 				7E0CE94326238342006F0E8E /* Networking.swift in Sources */,
 				7E0CE93326238342006F0E8E /* GetClusterNodes.swift in Sources */,
+				06967D5A264F977B0066A104 /* RPCResponse.swift in Sources */,
 				7E0CE92A26238342006F0E8E /* Account.swift in Sources */,
 				7E0CE92C26238342006F0E8E /* Encoding.swift in Sources */,
 				7E0CE93126238342006F0E8E /* GetBlockCommitment.swift in Sources */,
