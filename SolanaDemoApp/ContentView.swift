@@ -402,7 +402,9 @@ extension ContentView: SolanaDelegate {
     func receivedMessage<T>(message: T) where T : Decodable, T : Encodable {
         if let message = message as? String {
             print("message: \(message)")
-            output.value = message
+            DispatchQueue.main.async {
+                output.value = message
+            }
         }
     }
     
