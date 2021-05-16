@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "ba4f358b-9fcf-4713-8635-125a35de5218",
+		"name": "Solana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WebSockets",
+			"item": [
+				{
+					"name": "Logs Subscribe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"logsSubscribe\",\n    \"params\": [\n        {\n            \"mentions\": [ \"11111111111111111111111111111111\" ]\n        },\n        {\n            \"commitment\": \"finalized\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://api.mainnet-beta.solana.com",
+							"protocol": "http",
+							"host": [
+								"api",
+								"mainnet-beta",
+								"solana",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Account Info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getAccountInfo\",\n    \"params\": [\n      \"{{pubkey}}\",\n      {\n        \"encoding\": \"base58\"\n      }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getBalance\",\n    \"params\": [\"{{pubkey}}\"]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Block Commitment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getBlockCommitment\",\n    \"params\": [41901216]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Block Time",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getBlockTime\",\n    \"params\": [41901216]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cluster Nodes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getClusterNodes\"\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Block - mainnet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedBlock\",\n    \"params\": [430, \"json\"]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Blocks - mainnet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedBlocks\",\n    \"params\": [5, 50]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Blocks With Limit - mainnet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedBlocks\",\n    \"params\": [1, 10]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Blocks With Limit Copy - mainnet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedBlocks\",\n    \"params\": [1, 10]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Signatures For Address - mainnet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedSignaturesForAddress\",\n    \"params\": [\n        \"{{pubkey}}\",\n        1,\n        5\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Signatures For Address 2 - mainnet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedSignaturesForAddress2\",\n    \"params\": [\n        \"{{pubkey}}\",\n        {\n            \"limit\": 5\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Confirmed Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getConfirmedTransaction\",\n    \"params\": [\n        \"3gsewyaWbZAPCgJoa8En6pWs2V7XrW8gn8TixLzJz8QMFtu8uPyuppGdg6G3d53LaxLcayfUpf44bmc1qiaqLjL2\",\n        \"json\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Epoch Schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getEpochSchedule\",\n    \"params\": []\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simulate Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"simulateTransaction\",\n    \"params\": [\n        \"21Utv9ZpbdGWmtWPprg5uU2WRTV4sYLr38XA32qLu46D\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
