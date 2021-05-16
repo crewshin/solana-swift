@@ -401,7 +401,6 @@ struct ContentView_Previews: PreviewProvider {
 extension ContentView: SolanaDelegate {
     func receivedMessage<T>(message: T) where T : Decodable, T : Encodable {
         if let message = message as? String {
-            print("message: \(message)")
             DispatchQueue.main.async {
                 output.value = message
             }
