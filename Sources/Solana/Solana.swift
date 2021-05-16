@@ -57,7 +57,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetAccountInfoResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getAccountInfoError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -89,7 +88,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBalanceResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getBalanceError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -115,7 +113,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBlockCommitmentResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getBlockCommitmentError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -141,7 +138,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBlockTimeResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getBlockTimeError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -166,7 +162,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetClusterNodesResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getClusterNodesError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -196,7 +191,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedBlockResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getConfirmedBlockError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -225,7 +219,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedBlocksResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getConfirmedBlocksError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -254,7 +247,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedBlocksWithLimitResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getConfirmedBlocksWithLimitError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -290,7 +282,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedSignaturesForAddressResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getConfirmedSignaturesForAddressError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -329,7 +320,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedSignaturesForAddress2Response>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getConfirmedSignaturesForAddress2Error(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -364,7 +354,6 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedTransactionResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getConfirmedTransactionError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
@@ -394,8 +383,32 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetEpochInfoResponse>, Error>) in
             switch result {
             case .failure(let error):
-                // Log `people` related network errors here if needed.
                 completion(.failure(.getEpochInfoError(message: error.localizedDescription)))
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
+    
+    /// Returns the epoch schedule.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getepochschedule
+    public func getEpochSchedule(completion: @escaping (Result<Networking.Response<GetEpochScheduleResponse>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getEpochSchedule",
+            "params": []
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<GetEpochScheduleResponse>, Error>) in
+            switch result {
+            case .failure(let error):
+                completion(.failure(.getEpochScheduleError(message: error.localizedDescription)))
             case .success(let res):
                 completion(.success(res))
             }

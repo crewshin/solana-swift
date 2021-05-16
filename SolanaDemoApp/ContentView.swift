@@ -80,6 +80,10 @@ struct ContentView: View {
                     Button("Get Epoch Info") {
                         getEpochInfo()
                     }
+                    
+                    Button("Get Epoch Schedule") {
+                        getEpochSchedule()
+                    }
                 }
             }
             
@@ -376,7 +380,26 @@ struct ContentView: View {
         }
     }
     
-    
+    func getEpochSchedule() {
+        solana.getEpochSchedule() { (result) in
+            isViewingSocketData = false
+            
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.getEpochScheduleError(message) = error {
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
+                    toggleModal.toggle()
+                }
+            case .success(let response):
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
+                toggleModal.toggle()
+            }
+        }
+    }
     
     
     
