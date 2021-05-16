@@ -13,8 +13,7 @@ struct ContentView: View {
     let solanaSocket = SolanaSockets(network: .dev)
     
     @State var pubkey: String = "9B5XszUGdMaxCZ7uSQhPzdks5ZQSmWxrmzCSvtJ6Ns6g"
-    @State var output: String
-    
+    @EnvironmentObject var output: Output
     @State var toggleModal = false
     @State var toggleModalHidden = false
     @State var isViewingSocketData = false
@@ -98,7 +97,7 @@ struct ContentView: View {
             
             if isViewingSocketData {
                 Section(header: Text("Output")) {
-                    TextEditor(text: $output)
+                    TextEditor(text: $output.value)
                         .font(.caption)
                         .foregroundColor(.pink)
                 }
@@ -107,7 +106,7 @@ struct ContentView: View {
         .sheet(isPresented: isViewingSocketData ? $toggleModalHidden : $toggleModal,
                onDismiss: dismissSheet,
                content: {
-                ResultView(input: output)
+                ResultView(input: output.value)
                }
         )
     }
@@ -127,15 +126,17 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getAccountInfoError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
                 if let value = response.value.asDictionary {
-                    print(value)
-                    output = value.convertDictToJsonString()
+                    DispatchQueue.main.async {
+                        output.value = value.convertDictToJsonString()
+                    }
                     toggleModal.toggle()
                 }
             }
@@ -148,14 +149,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getBalanceError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value)"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value)"
+                }
                 toggleModal.toggle()
             }
         }
@@ -167,14 +170,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getBlockCommitmentError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -186,14 +191,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getBlockTimeError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -205,14 +212,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getClusterNodesError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -224,14 +233,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getConfirmedBlockError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -243,14 +254,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getConfirmedBlocksError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -262,14 +275,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getConfirmedBlocksWithLimitError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -282,14 +297,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getConfirmedSignaturesForAddressError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -302,14 +319,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getConfirmedSignaturesForAddress2Error(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -321,14 +340,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getConfirmedTransactionError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -340,14 +361,16 @@ struct ContentView: View {
             
             switch result {
             case .failure(let error):
-                print(error)
                 if case let SolanaAPIError.getEpochInfoError(message) = error {
-                    output = message
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
                     toggleModal.toggle()
                 }
             case .success(let response):
-                print(response.value)
-                output = "\(response.value.asDictionary ?? [:])"
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
                 toggleModal.toggle()
             }
         }
@@ -370,8 +393,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
-            pubkey: "9B5XszUGdMaxCZ7uSQhPzdks5ZQSmWxrmzCSvtJ6Ns6g",
-            output: "Test output"
+            pubkey: "9B5XszUGdMaxCZ7uSQhPzdks5ZQSmWxrmzCSvtJ6Ns6g"
         )
     }
 }
@@ -380,7 +402,7 @@ extension ContentView: SolanaDelegate {
     func receivedMessage<T>(message: T) where T : Decodable, T : Encodable {
         if let message = message as? String {
             print("message: \(message)")
-            output = message
+            output.value = message
         }
     }
     

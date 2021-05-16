@@ -46,6 +46,7 @@
 		7E30FC6725FBBBFB0036597A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30FC6625FBBBFB0036597A /* ResultView.swift */; };
 		7E6DAE9B2627256700A6F118 /* Base58Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6DAE9A2627256700A6F118 /* Base58Swift */; };
 		7E6DAE9F2627259500A6F118 /* ed25519swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6DAE9E2627259500A6F118 /* ed25519swift */; };
+		7E7E63852650A19F0044026A /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E63842650A19F0044026A /* Output.swift */; };
 		7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2025F9A0330066CA84 /* AppDelegate.swift */; };
 		7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2225F9A0330066CA84 /* SceneDelegate.swift */; };
 		7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2425F9A0330066CA84 /* ContentView.swift */; };
@@ -92,6 +93,7 @@
 		7E0CE92426238342006F0E8E /* SolanaSockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaSockets.swift; sourceTree = "<group>"; };
 		7E0CE92526238342006F0E8E /* WebSockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSockets.swift; sourceTree = "<group>"; };
 		7E30FC6625FBBBFB0036597A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		7E7E63842650A19F0044026A /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E937B2025F9A0330066CA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E937B2225F9A0330066CA84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				7E937B2025F9A0330066CA84 /* AppDelegate.swift */,
 				7E937B2225F9A0330066CA84 /* SceneDelegate.swift */,
 				7E937B2425F9A0330066CA84 /* ContentView.swift */,
+				7E7E63842650A19F0044026A /* Output.swift */,
 				7E30FC6625FBBBFB0036597A /* ResultView.swift */,
 				7E937B2625F9A0360066CA84 /* Assets.xcassets */,
 				7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */,
@@ -346,6 +349,7 @@
 				7E0CE93126238342006F0E8E /* GetBlockCommitment.swift in Sources */,
 				7E0CE93E26238342006F0E8E /* TokenBalance.swift in Sources */,
 				7E0CE93426238342006F0E8E /* GetConfirmedBlock.swift in Sources */,
+				7E7E63852650A19F0044026A /* Output.swift in Sources */,
 				7E0CE93226238342006F0E8E /* GetBlockTime.swift in Sources */,
 				7E0CE92E26238342006F0E8E /* Instruction.swift in Sources */,
 				7E0CE93A26238342006F0E8E /* GetEpochInfo.swift in Sources */,
