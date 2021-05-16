@@ -1,9 +1,5 @@
 //
 //  JSON+.swift
-//  Avalbl
-//
-//  Created by Gene Crucean on 12/1/19.
-//  Copyright © 2019 Avalbl. All rights reserved.
 //
 
 import Foundation

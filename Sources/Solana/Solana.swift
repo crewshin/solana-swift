@@ -57,7 +57,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetAccountInfoResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getAccountInfoError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getAccountInfoError(message: message)))
+                } else {
+                    completion(.failure(.getAccountInfoError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -88,7 +92,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBalanceResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getBalanceError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getBalanceError(message: message)))
+                } else {
+                    completion(.failure(.getBalanceError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -113,7 +121,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBlockCommitmentResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getBlockCommitmentError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getBlockCommitmentError(message: message)))
+                } else {
+                    completion(.failure(.getBlockCommitmentError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -138,7 +150,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBlockTimeResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getBlockTimeError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getBlockTimeError(message: message)))
+                } else {
+                    completion(.failure(.getBlockTimeError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -162,7 +178,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetClusterNodesResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getClusterNodesError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getClusterNodesError(message: message)))
+                } else {
+                    completion(.failure(.getClusterNodesError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -191,7 +211,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedBlockResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getConfirmedBlockError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getConfirmedBlockError(message: message)))
+                } else {
+                    completion(.failure(.getConfirmedBlockError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -219,7 +243,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedBlocksResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getConfirmedBlocksError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getConfirmedBlocksError(message: message)))
+                } else {
+                    completion(.failure(.getConfirmedBlocksError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -247,7 +275,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedBlocksWithLimitResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getConfirmedBlocksWithLimitError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getConfirmedBlocksWithLimitError(message: message)))
+                } else {
+                    completion(.failure(.getConfirmedBlocksWithLimitError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -282,7 +314,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedSignaturesForAddressResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getConfirmedSignaturesForAddressError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getConfirmedSignaturesForAddressError(message: message)))
+                } else {
+                    completion(.failure(.getConfirmedSignaturesForAddressError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -320,7 +356,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedSignaturesForAddress2Response>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getConfirmedSignaturesForAddress2Error(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getConfirmedSignaturesForAddress2Error(message: message)))
+                } else {
+                    completion(.failure(.getConfirmedSignaturesForAddress2Error(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -354,7 +394,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedTransactionResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getConfirmedTransactionError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getConfirmedTransactionError(message: message)))
+                } else {
+                    completion(.failure(.getConfirmedTransactionError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -383,7 +427,11 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetEpochInfoResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getEpochInfoError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getEpochInfoError(message: message)))
+                } else {
+                    completion(.failure(.getEpochInfoError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }
@@ -408,7 +456,42 @@ public class Solana {
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetEpochScheduleResponse>, Error>) in
             switch result {
             case .failure(let error):
-                completion(.failure(.getEpochScheduleError(message: error.localizedDescription)))
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getEpochScheduleError(message: message)))
+                } else {
+                    completion(.failure(.getEpochScheduleError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
+    
+    /// Returns the fee calculator for blockhash.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getfeecalculatorforblockhash
+    public func getFeeCalculatorFor(blockhash: String, completion: @escaping (Result<Networking.Response<GetFeeCalculatorForBlockhashResponse>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getFeeCalculatorForBlockhash",
+            "params": [
+                blockhash
+            ]
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<GetFeeCalculatorForBlockhashResponse>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getFeeCalculatorForBlockhashError(message: message)))
+                } else {
+                    completion(.failure(.getFeeCalculatorForBlockhashError(message: error.localizedDescription)))
+                }
             case .success(let res):
                 completion(.success(res))
             }

@@ -32,16 +32,19 @@ public struct Networking {
         }
         
         URLSession.shared.dataTask(with: tmpRequest) { (data, response, error) in
-            guard let data = data,
-                  error == nil,
-                  let response = response,
-                  let objectOutput = try? JSONDecoder().decode(T.self, from: data)
-            else {
-                completion(.failure(SolanaAPIError.generic(message: "There was an issue decoding the response.")))
+            guard let data = data, error == nil, let response = response else {
+                completion(.failure(SolanaAPIError.generic(message: "API Call guard failed.")))
                 return
             }
+            
+            do {
+                let objectOutput = try JSONDecoder().decode(T.self, from: data)
+                completion(.success(Response(value: objectOutput, response: response)))
+            } catch {
+                completion(.failure(SolanaAPIError.generic(message: "There was an issue decoding the response.")))
+            }
 
-            completion(.success(Response(value: objectOutput, response: response)))
+            
             
         }.resume()
     }

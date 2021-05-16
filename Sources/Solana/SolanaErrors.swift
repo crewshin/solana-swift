@@ -22,7 +22,7 @@ public enum SolanaAPIError: Error {
     case getConfirmedTransactionError(message: String)
     case getEpochInfoError(message: String)
     case getEpochScheduleError(message: String)
-    
+    case getFeeCalculatorForBlockhashError(message: String)
     
     case simulateTransactionError(message: String)
 }

@@ -84,6 +84,10 @@ struct ContentView: View {
                     Button("Get Epoch Schedule") {
                         getEpochSchedule()
                     }
+                    
+                    Button("Get Fee Calculator For Blockhash") {
+                        getFeeCalculatorForBlockhash()
+                    }
                 }
             }
             
@@ -401,7 +405,26 @@ struct ContentView: View {
         }
     }
     
-    
+    func getFeeCalculatorForBlockhash() {
+        solana.getFeeCalculatorFor(blockhash: "6bERxmpFyJrdKWneWMyUWTvZx563qssYjGQn4S2sXWMY") { (result) in
+            isViewingSocketData = false
+            
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.getFeeCalculatorForBlockhashError(message) = error {
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
+                    toggleModal.toggle()
+                }
+            case .success(let response):
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
+                toggleModal.toggle()
+            }
+        }
+    }
     
     
     // MARK: - WebSockets

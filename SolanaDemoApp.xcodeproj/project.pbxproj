@@ -48,6 +48,7 @@
 		7E6DAE9F2627259500A6F118 /* ed25519swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6DAE9E2627259500A6F118 /* ed25519swift */; };
 		7E7E63852650A19F0044026A /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E63842650A19F0044026A /* Output.swift */; };
 		7E7E6387265168120044026A /* GetEpochSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E6386265168120044026A /* GetEpochSchedule.swift */; };
+		7E7E638926516D5D0044026A /* GetFeeCalculatorForBlockhash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E638826516D5D0044026A /* GetFeeCalculatorForBlockhash.swift */; };
 		7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2025F9A0330066CA84 /* AppDelegate.swift */; };
 		7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2225F9A0330066CA84 /* SceneDelegate.swift */; };
 		7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2425F9A0330066CA84 /* ContentView.swift */; };
@@ -96,6 +97,7 @@
 		7E30FC6625FBBBFB0036597A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		7E7E63842650A19F0044026A /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		7E7E6386265168120044026A /* GetEpochSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEpochSchedule.swift; sourceTree = "<group>"; };
+		7E7E638826516D5D0044026A /* GetFeeCalculatorForBlockhash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeeCalculatorForBlockhash.swift; sourceTree = "<group>"; };
 		7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E937B2025F9A0330066CA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E937B2225F9A0330066CA84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				7E0CE91526238342006F0E8E /* GetConfirmedTransaction.swift */,
 				7E0CE91626238342006F0E8E /* GetEpochInfo.swift */,
 				7E7E6386265168120044026A /* GetEpochSchedule.swift */,
+				7E7E638826516D5D0044026A /* GetFeeCalculatorForBlockhash.swift */,
 				7E0CE91726238342006F0E8E /* SimulateTransaction.swift */,
 				06967D59264F977B0066A104 /* RPCResponse.swift */,
 			);
@@ -360,6 +363,7 @@
 				7E0CE92626238342006F0E8E /* Double+.swift in Sources */,
 				7E0CE94726238342006F0E8E /* SolanaSockets.swift in Sources */,
 				7E0CE93926238342006F0E8E /* GetConfirmedTransaction.swift in Sources */,
+				7E7E638926516D5D0044026A /* GetFeeCalculatorForBlockhash.swift in Sources */,
 				7E0CE92826238342006F0E8E /* JSON+.swift in Sources */,
 				7E0CE94426238342006F0E8E /* NetworkRequestType.swift in Sources */,
 				7E0CE92726238342006F0E8E /* Int+.swift in Sources */,

@@ -16,12 +16,4 @@ public struct GetEpochScheduleResult: Codable {
     public let leaderScheduleSlotOffset: Int
     public let slotsPerEpoch: Int
     public let warmup: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case firstNormalEpoch = "firstNormalEpoch"
-        case firstNormalSlot = "firstNormalSlot"
-        case leaderScheduleSlotOffset = "leaderScheduleSlotOffset"
-        case slotsPerEpoch = "slotsPerEpoch"
-        case warmup = "warmup"
-    }
 }
