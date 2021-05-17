@@ -50,6 +50,8 @@
 		7E7E6387265168120044026A /* GetEpochSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E6386265168120044026A /* GetEpochSchedule.swift */; };
 		7E7E638926516D5D0044026A /* GetFeeCalculatorForBlockhash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E638826516D5D0044026A /* GetFeeCalculatorForBlockhash.swift */; };
 		7E7E638B2652A5CB0044026A /* GetFeeRateGovernor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E638A2652A5CB0044026A /* GetFeeRateGovernor.swift */; };
+		7E7E638D2652A7FF0044026A /* GetBlockProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E638C2652A7FF0044026A /* GetBlockProduction.swift */; };
+		7E7E638F2652B1CF0044026A /* SlotRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E638E2652B1CF0044026A /* SlotRange.swift */; };
 		7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2025F9A0330066CA84 /* AppDelegate.swift */; };
 		7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2225F9A0330066CA84 /* SceneDelegate.swift */; };
 		7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E937B2425F9A0330066CA84 /* ContentView.swift */; };
@@ -100,6 +102,8 @@
 		7E7E6386265168120044026A /* GetEpochSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEpochSchedule.swift; sourceTree = "<group>"; };
 		7E7E638826516D5D0044026A /* GetFeeCalculatorForBlockhash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeeCalculatorForBlockhash.swift; sourceTree = "<group>"; };
 		7E7E638A2652A5CB0044026A /* GetFeeRateGovernor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeeRateGovernor.swift; sourceTree = "<group>"; };
+		7E7E638C2652A7FF0044026A /* GetBlockProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlockProduction.swift; sourceTree = "<group>"; };
+		7E7E638E2652B1CF0044026A /* SlotRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotRange.swift; sourceTree = "<group>"; };
 		7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E937B2025F9A0330066CA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E937B2225F9A0330066CA84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,18 +165,19 @@
 		7E0CE90426238342006F0E8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7E0CE90A26238342006F0E8E /* Requests and Responses */,
+				7E0CE91D26238342006F0E8E /* WebSockets */,
 				7E0CE90526238342006F0E8E /* Account.swift */,
 				7E0CE90626238342006F0E8E /* Commitment.swift */,
 				7E0CE90726238342006F0E8E /* Encoding.swift */,
 				7E0CE90826238342006F0E8E /* Filter.swift */,
 				7E0CE90926238342006F0E8E /* Instruction.swift */,
-				7E0CE90A26238342006F0E8E /* Requests and Responses */,
 				7E0CE91826238342006F0E8E /* RewardType.swift */,
 				7E0CE91926238342006F0E8E /* RpcError.swift */,
 				7E0CE91A26238342006F0E8E /* TokenBalance.swift */,
 				7E0CE91B26238342006F0E8E /* Transaction.swift */,
 				7E0CE91C26238342006F0E8E /* TransactionError.swift */,
-				7E0CE91D26238342006F0E8E /* WebSockets */,
+				7E7E638E2652B1CF0044026A /* SlotRange.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				7E0CE90E26238342006F0E8E /* GetBlockTime.swift */,
 				7E0CE90F26238342006F0E8E /* GetClusterNodes.swift */,
 				7E0CE91026238342006F0E8E /* GetConfirmedBlock.swift */,
+				7E7E638C2652A7FF0044026A /* GetBlockProduction.swift */,
 				7E0CE91126238342006F0E8E /* GetConfirmedBlocks.swift */,
 				7E0CE91226238342006F0E8E /* GetConfirmedBlocksWithLimit.swift */,
 				7E0CE91326238342006F0E8E /* GetConfirmedSignaturesForAddress.swift */,
@@ -331,6 +337,7 @@
 				7E0CE93826238342006F0E8E /* GetConfirmedSignaturesForAddress2.swift in Sources */,
 				7E0CE93626238342006F0E8E /* GetConfirmedBlocksWithLimit.swift in Sources */,
 				7E937B2125F9A0330066CA84 /* AppDelegate.swift in Sources */,
+				7E7E638F2652B1CF0044026A /* SlotRange.swift in Sources */,
 				7E0CE92D26238342006F0E8E /* Filter.swift in Sources */,
 				7E0CE94826238342006F0E8E /* WebSockets.swift in Sources */,
 				7E7E6387265168120044026A /* GetEpochSchedule.swift in Sources */,
@@ -338,6 +345,7 @@
 				7E0CE94226238342006F0E8E /* Network.swift in Sources */,
 				7E0CE92926238342006F0E8E /* String+.swift in Sources */,
 				7E0CE93B26238342006F0E8E /* SimulateTransaction.swift in Sources */,
+				7E7E638D2652A7FF0044026A /* GetBlockProduction.swift in Sources */,
 				7E0CE93526238342006F0E8E /* GetConfirmedBlocks.swift in Sources */,
 				7E0CE94526238342006F0E8E /* Solana.swift in Sources */,
 				7E0CE93D26238342006F0E8E /* RpcError.swift in Sources */,

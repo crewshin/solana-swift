@@ -55,6 +55,10 @@ struct ContentView: View {
                         getConfirmedBlock()
                     }
                     
+                    Button("Get Block Production") {
+                        getBlockProduction()
+                    }
+                    
                     Button("Get Confirmed Blocks") {
                         getConfirmedBlocks()
                     }
@@ -66,13 +70,13 @@ struct ContentView: View {
                     Button("Get Confirmed Signatures For Address 2") {
                         getConfirmedSignaturesForAddress2()
                     }
-                    
-                    Button("Get Confirmed Transaction") {
-                        getConfirmedTransaction()
-                    }
                 }
                 
                 Group {
+                    Button("Get Confirmed Transaction") {
+                        getConfirmedTransaction()
+                    }
+                    
                     Button("Get Epoch Info") {
                         getEpochInfo()
                     }
@@ -242,6 +246,27 @@ struct ContentView: View {
             switch result {
             case .failure(let error):
                 if case let SolanaAPIError.getConfirmedBlockError(message) = error {
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
+                    toggleModal.toggle()
+                }
+            case .success(let response):
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
+                toggleModal.toggle()
+            }
+        }
+    }
+    
+    func getBlockProduction() {
+        solana.getBlockProduction(commitment: .finalized, slotRange: SlotRange(firstSlot: 55579597, lastSlot: 55579600), identity: nil) { (result) in
+            isViewingSocketData = false
+            
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.getBlockProductionError(message) = error {
                     DispatchQueue.main.async {
                         output.value = message
                     }

@@ -74,6 +74,7 @@ getBlockCommitment
 getBlockTime
 getClusterNodes
 getConfirmedBlock
+getBlockProduction
 getConfirmedBlocks
 getConfirmedBlocksWithLimit
 getConfirmedSignaturesForAddress

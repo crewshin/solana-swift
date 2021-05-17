@@ -25,7 +25,6 @@ public struct GetFeeRateGovernorContext: Codable {
     }
 }
 
-// MARK: - Value
 public struct GetFeeRateGovernorValue: Codable {
     public let feeRateGovernor: FeeRateGovernor
 
@@ -34,7 +33,6 @@ public struct GetFeeRateGovernorValue: Codable {
     }
 }
 
-// MARK: - FeeRateGovernor
 public struct FeeRateGovernor: Codable {
     public let burnPercent: Int
     public let maxLamportsPerSignature: Int

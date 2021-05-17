@@ -222,6 +222,54 @@ public class Solana {
         }
     }
     
+    /// Returns recent block production information from the current or previous epoch.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getblockproduction
+    public func getBlockProduction(commitment: Commitment? = nil, slotRange: SlotRange? = nil, identity: String? = nil, completion: @escaping (Result<Networking.Response<GetBlockProductionResponse>, SolanaAPIError>) -> Void) {
+        
+        var params: [String: Any] = [:]
+        
+        if let commitment = commitment {
+            params["commitment"] = commitment.rawValue
+        }
+        
+        if let range = slotRange {
+            params["range"] = [
+                "firstSlot": range.firstSlot,
+                "lastSlot": range.lastSlot
+            ]
+        }
+        
+        if let identity = identity {
+            params["identity"] = identity
+        }
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getBlockProduction",
+            "params": [
+                params
+            ]
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<GetBlockProductionResponse>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getBlockProductionError(message: message)))
+                } else {
+                    completion(.failure(.getBlockProductionError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
+    
     /// Returns a list of confirmed blocks between two slots.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedblocks
     public func getConfirmedBlocks(startSlot: UInt64, endSlot: UInt64? = nil, completion: @escaping (Result<Networking.Response<GetConfirmedBlocksResponse>, SolanaAPIError>) -> Void) {
@@ -480,9 +528,9 @@ public class Solana {
             switch result {
             case .failure(let error):
                 if case let SolanaAPIError.generic(message) = error {
-                    completion(.failure(.getFeeCalculatorForBlockhashError(message: message)))
+                    completion(.failure(.getFeeRateGovernorError(message: message)))
                 } else {
-                    completion(.failure(.getFeeCalculatorForBlockhashError(message: error.localizedDescription)))
+                    completion(.failure(.getFeeRateGovernorError(message: error.localizedDescription)))
                 }
             case .success(let res):
                 completion(.success(res))

@@ -15,6 +15,7 @@ public enum SolanaAPIError: Error {
     case getBlockTimeError(message: String)
     case getClusterNodesError(message: String)
     case getConfirmedBlockError(message: String)
+    case getBlockProductionError(message: String)
     case getConfirmedBlocksError(message: String)
     case getConfirmedBlocksWithLimitError(message: String)
     case getConfirmedSignaturesForAddressError(message: String)
