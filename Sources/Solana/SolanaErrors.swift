@@ -23,6 +23,7 @@ public enum SolanaAPIError: Error {
     case getEpochInfoError(message: String)
     case getEpochScheduleError(message: String)
     case getFeeCalculatorForBlockhashError(message: String)
+    case getFeeRateGovernorError(message: String)
     
     case simulateTransactionError(message: String)
 }

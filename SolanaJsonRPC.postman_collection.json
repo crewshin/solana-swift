@@ -351,6 +351,54 @@
 			"response": []
 		},
 		{
+			"name": "Get Fee Calculator For Blockhash",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getFeeCalculatorForBlockhash\",\n    \"params\": [\n        \"6bERxmpFyJrdKWneWMyUWTvZx563qssYjGQn4S2sXWMY\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fee Rate Governor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"getFeeRateGovernor\",\n    \"params\": [\n        \n    ]\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Simulate Transaction",
 			"request": {
 				"method": "POST",

@@ -222,7 +222,7 @@ public class Solana {
         }
     }
     
-    /// Returns the confirmed blocks for the provided start/end slots.
+    /// Returns a list of confirmed blocks between two slots.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedblocks
     public func getConfirmedBlocks(startSlot: UInt64, endSlot: UInt64? = nil, completion: @escaping (Result<Networking.Response<GetConfirmedBlocksResponse>, SolanaAPIError>) -> Void) {
         
@@ -254,7 +254,7 @@ public class Solana {
         }
     }
     
-    /// Returns the confirmed blocks from the provided start slot with limit.
+    /// Returns a list of confirmed blocks starting at the given slot.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedblockswithlimit
     public func getConfirmedBlocksWithLimit(startSlot: UInt64, limit: UInt64, completion: @escaping (Result<Networking.Response<GetConfirmedBlocksWithLimitResponse>, SolanaAPIError>) -> Void) {
         
@@ -286,46 +286,7 @@ public class Solana {
         }
     }
     
-    /// Returns the confirmed signatures for the given params.
-    /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedsignaturesforaddress
-    public func getConfirmedSignaturesForAddress(address: String, startSlot: UInt64, endSlot: UInt64, completion: @escaping (Result<Networking.Response<GetConfirmedSignaturesForAddressResponse>, SolanaAPIError>) -> Void) {
-        
-        // Simple sanity checking.
-        guard address.count > 0 else {
-            completion(.failure(.getConfirmedSignaturesForAddressError(message: "Please enter a valid pubkey")))
-            return
-        }
-        
-        let body: [String: Any] = [
-            "jsonrpc": jsonrpc,
-            "id": 1,
-            "method": "getConfirmedSignaturesForAddress",
-            "params": [
-                address,
-                startSlot,
-                endSlot
-            ]
-        ]
-        
-        var request = URLRequest(url: networkURL)
-        request.httpBody = body.convertDictToJsonData()
-        request.httpMethod = HTTPRequestType.post.rawValue
-
-        networking.decodableTask(request: request) { (result: Result<Networking.Response<GetConfirmedSignaturesForAddressResponse>, Error>) in
-            switch result {
-            case .failure(let error):
-                if case let SolanaAPIError.generic(message) = error {
-                    completion(.failure(.getConfirmedSignaturesForAddressError(message: message)))
-                } else {
-                    completion(.failure(.getConfirmedSignaturesForAddressError(message: error.localizedDescription)))
-                }
-            case .success(let res):
-                completion(.success(res))
-            }
-        }
-    }
-    
-    /// Returns the confirmed signatures for the given params.
+    /// Returns confirmed signatures for transactions involving an address backwards in time from the provided signature or most recent confirmed block.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedsignaturesforaddress2
     public func getConfirmedSignaturesForAddress2(address: String, config: GetConfirmedSignaturesForAddress2Config? = nil, completion: @escaping (Result<Networking.Response<GetConfirmedSignaturesForAddress2Response>, SolanaAPIError>) -> Void) {
         
@@ -367,7 +328,7 @@ public class Solana {
         }
     }
     
-    /// Returns the confirmed transaction.
+    /// Returns transaction details for a confirmed transaction.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getconfirmedtransaction
     public func getConfirmedTransaction(transaction: String, encoding: Encoding? = .json, completion: @escaping (Result<Networking.Response<GetConfirmedTransactionResponse>, SolanaAPIError>) -> Void) {
         
@@ -405,7 +366,7 @@ public class Solana {
         }
     }
     
-    /// Returns the epoch info for the provided commitment.
+    /// Returns information about the current epoch.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getepochinfo
     public func getEpochInfo(commitment: Commitment? = nil, completion: @escaping (Result<Networking.Response<GetEpochInfoResponse>, SolanaAPIError>) -> Void) {
         
@@ -438,7 +399,7 @@ public class Solana {
         }
     }
     
-    /// Returns the epoch schedule.
+    /// Returns epoch schedule information from this cluster's genesis config.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getepochschedule
     public func getEpochSchedule(completion: @escaping (Result<Networking.Response<GetEpochScheduleResponse>, SolanaAPIError>) -> Void) {
         
@@ -467,7 +428,7 @@ public class Solana {
         }
     }
     
-    /// Returns the fee calculator for blockhash.
+    /// Returns the fee calculator associated with the query blockhash, or null if the blockhash has expired.
     /// https://docs.solana.com/developing/clients/jsonrpc-api#getfeecalculatorforblockhash
     public func getFeeCalculatorFor(blockhash: String, completion: @escaping (Result<Networking.Response<GetFeeCalculatorForBlockhashResponse>, SolanaAPIError>) -> Void) {
         
@@ -485,6 +446,37 @@ public class Solana {
         request.httpMethod = HTTPRequestType.post.rawValue
 
         networking.decodableTask(request: request) { (result: Result<Networking.Response<GetFeeCalculatorForBlockhashResponse>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getFeeCalculatorForBlockhashError(message: message)))
+                } else {
+                    completion(.failure(.getFeeCalculatorForBlockhashError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
+    
+    /// Returns the fee rate governor information from the root bank.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getfeerategovernor
+    public func getFeeRateGovernor(completion: @escaping (Result<Networking.Response<GetFeeRateGovernorResponse>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getFeeRateGovernor",
+            "params": [
+                
+            ]
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<GetFeeRateGovernorResponse>, Error>) in
             switch result {
             case .failure(let error):
                 if case let SolanaAPIError.generic(message) = error {

@@ -63,20 +63,16 @@ struct ContentView: View {
                         getConfirmedBlocksWithLimit()
                     }
                     
-                    Button("Get Confirmed Signatures For Address") {
-                        getConfirmedSignaturesForAddress()
-                    }
-                    
                     Button("Get Confirmed Signatures For Address 2") {
                         getConfirmedSignaturesForAddress2()
+                    }
+                    
+                    Button("Get Confirmed Transaction") {
+                        getConfirmedTransaction()
                     }
                 }
                 
                 Group {
-                    Button("Get Confirmed Transaction") {
-                        getConfirmedTransaction()
-                    }
-                    
                     Button("Get Epoch Info") {
                         getEpochInfo()
                     }
@@ -87,6 +83,10 @@ struct ContentView: View {
                     
                     Button("Get Fee Calculator For Blockhash") {
                         getFeeCalculatorForBlockhash()
+                    }
+                    
+                    Button("Get Fee Rate Governor") {
+                        getFeeRateGovernor()
                     }
                 }
             }
@@ -299,28 +299,6 @@ struct ContentView: View {
     }
     
     // Need to confirm success response.
-    func getConfirmedSignaturesForAddress() {
-        solana.getConfirmedSignaturesForAddress(address: pubkey, startSlot: 1, endSlot: 5) { (result) in
-            isViewingSocketData = false
-            
-            switch result {
-            case .failure(let error):
-                if case let SolanaAPIError.getConfirmedSignaturesForAddressError(message) = error {
-                    DispatchQueue.main.async {
-                        output.value = message
-                    }
-                    toggleModal.toggle()
-                }
-            case .success(let response):
-                DispatchQueue.main.async {
-                    output.value = "\(response.value.asDictionary ?? [:])"
-                }
-                toggleModal.toggle()
-            }
-        }
-    }
-    
-    // Need to confirm success response.
     func getConfirmedSignaturesForAddress2() {
         solana.getConfirmedSignaturesForAddress2(address: pubkey, config: nil) { (result) in
             isViewingSocketData = false
@@ -412,6 +390,27 @@ struct ContentView: View {
             switch result {
             case .failure(let error):
                 if case let SolanaAPIError.getFeeCalculatorForBlockhashError(message) = error {
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
+                    toggleModal.toggle()
+                }
+            case .success(let response):
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
+                toggleModal.toggle()
+            }
+        }
+    }
+    
+    func getFeeRateGovernor() {
+        solana.getFeeRateGovernor() { (result) in
+            isViewingSocketData = false
+            
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.getFeeRateGovernorError(message) = error {
                     DispatchQueue.main.async {
                         output.value = message
                     }

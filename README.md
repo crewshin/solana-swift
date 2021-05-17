@@ -35,7 +35,7 @@ Create an instance of Solana:
 let solana = Solana(network: .main)
 ```
 
-or 
+or (not functional yet)
 
 ```swift
 let solana = SolanaSockets(network: .main)
@@ -80,6 +80,9 @@ getConfirmedSignaturesForAddress
 getConfirmedSignaturesForAddress2
 getConfirmedTransaction
 getEpochInfo
+getEpochSchedule
+getFeeCalculatorForBlockhash
+getFeeRateGovernor
 ```
 
 
