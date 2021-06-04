@@ -8,9 +8,22 @@
 import Foundation
 
 // MARK: - Network
-public enum Network: String, RawRepresentable {
-    case local = "http://localhost"
-    case dev = "https://devnet.solana.com"
-    case test = "https://testnet.solana.com"
-    case main = "https://api.mainnet-beta.solana.com"
+public enum Network {
+    case local(network: String)
+    case dev
+    case test
+    case main
+    
+    var url: URL? {
+        switch self {
+        case .local(let network):
+            return URL(string: network)
+        case .dev:
+            return URL(string: "https://devnet.solana.com")
+        case .test:
+            return URL(string: "https://testnet.solana.com")
+        case .main:
+            return URL(string: "https://api.mainnet-beta.solana.com")
+        }
+    }
 }

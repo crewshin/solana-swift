@@ -24,7 +24,7 @@ public class Solana {
     public var delegate: SolanaDelegate?
     
     public init(network: Network, networking: Networking = Networking()) {
-        self.networkURL = URL(string: network.rawValue)!
+        self.networkURL = network.url ?? URL(string: "https://devnet.solana.com")!
         self.networking = networking
     }
     

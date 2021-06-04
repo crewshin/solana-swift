@@ -15,7 +15,7 @@ public class SolanaSockets {
     public var delegate: SolanaDelegate?
     
     public init(network: Network, websockets: WebSockets = WebSockets()) {
-        self.networkURL = URL(string: network.rawValue)!
+        self.networkURL = network.url ?? URL(string: "https://devnet.solana.com")!
         self.websockets = websockets
     }
     

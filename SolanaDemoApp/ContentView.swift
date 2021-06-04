@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var solana = Solana(network: .dev)
     @State var solanaSocket = SolanaSockets(network: .dev)
     @State private var networkSelection: Int = 1
+    @State private var localNetworkIsSelected = false
+    @State private var localNetwork = "http://localhost:8899"
     
     @EnvironmentObject var output: Output
     
@@ -28,11 +30,19 @@ struct ContentView: View {
                     Text("Dev").tag(1)
                     Text("Test").tag(2)
                     Text("Main").tag(3)
+                    Text("Local").tag(4)
                 })
                 .pickerStyle(SegmentedPickerStyle())
                 .onChange(of: networkSelection, perform: { value in
                     setNetwork()
                 })
+                
+                if localNetworkIsSelected {
+                    TextField("http://localhost:8899", text: $localNetwork)
+                        .onChange(of: localNetwork, perform: { value in
+                            setNetwork()
+                        })
+                }
             }
             
             Section(header: Text("Pubkey")) {
@@ -505,15 +515,23 @@ struct ContentView: View {
         case 1:
             solana = Solana(network: .dev)
             solanaSocket = SolanaSockets(network: .dev)
+            localNetworkIsSelected = false
         case 2:
             solana = Solana(network: .test)
             solanaSocket = SolanaSockets(network: .test)
+            localNetworkIsSelected = false
         case 3:
             solana = Solana(network: .main)
             solanaSocket = SolanaSockets(network: .main)
+            localNetworkIsSelected = false
+        case 4:
+            solana = Solana(network: .local(network: localNetwork))
+            solanaSocket = SolanaSockets(network: .local(network: localNetwork))
+            localNetworkIsSelected = true
         default:
             solana = Solana(network: .dev)
             solanaSocket = SolanaSockets(network: .dev)
+            localNetworkIsSelected = false
         }
     }
 }
