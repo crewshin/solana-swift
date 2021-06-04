@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let solana = Solana(network: .dev)
-    let solanaSocket = SolanaSockets(network: .dev)
+    @State var solana = Solana(network: .dev)
+    @State var solanaSocket = SolanaSockets(network: .dev)
+    @State private var networkSelection: Int = 1
+    
+    @EnvironmentObject var output: Output
     
     @State var pubkey: String = "9B5XszUGdMaxCZ7uSQhPzdks5ZQSmWxrmzCSvtJ6Ns6g"
-    @EnvironmentObject var output: Output
     @State var toggleModal = false
     @State var toggleModalHidden = false
     @State var isViewingSocketData = false
@@ -21,7 +23,19 @@ struct ContentView: View {
     var body: some View {
         Form {
             
-            Section(header: Text("Address")) {
+            Section(header: Text("Network")) {
+                Picker(selection: $networkSelection, label: Text("Picker"), content: {
+                    Text("Dev").tag(1)
+                    Text("Test").tag(2)
+                    Text("Main").tag(3)
+                })
+                .pickerStyle(SegmentedPickerStyle())
+                .onChange(of: networkSelection, perform: { value in
+                    setNetwork()
+                })
+            }
+            
+            Section(header: Text("Pubkey")) {
                 TextField("PubKey",
                     text: $pubkey
                 )
@@ -92,6 +106,10 @@ struct ContentView: View {
                     Button("Get Fee Rate Governor") {
                         getFeeRateGovernor()
                     }
+                    
+                    Button("Get Fees") {
+                        getFees()
+                    }
                 }
             }
             
@@ -120,7 +138,7 @@ struct ContentView: View {
                content: {
                 ResultView(input: output.value)
                }
-        )
+            )
     }
     
     // MARK: - Result Sheet
@@ -450,6 +468,27 @@ struct ContentView: View {
         }
     }
     
+    func getFees() {
+        solana.getFees(commitment: .finalized) { (result) in
+            isViewingSocketData = false
+            
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.getFeesError(message) = error {
+                    DispatchQueue.main.async {
+                        output.value = message
+                    }
+                    toggleModal.toggle()
+                }
+            case .success(let response):
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
+                }
+                toggleModal.toggle()
+            }
+        }
+    }
+    
     
     // MARK: - WebSockets
     
@@ -457,6 +496,25 @@ struct ContentView: View {
         solanaSocket.delegate = self
         isViewingSocketData.toggle()
         solanaSocket.testWebSocket(request: nil)
+    }
+    
+    // MARK: - Misc demo app helpers
+    
+    func setNetwork() {
+        switch networkSelection {
+        case 1:
+            solana = Solana(network: .dev)
+            solanaSocket = SolanaSockets(network: .dev)
+        case 2:
+            solana = Solana(network: .test)
+            solanaSocket = SolanaSockets(network: .test)
+        case 3:
+            solana = Solana(network: .main)
+            solanaSocket = SolanaSockets(network: .main)
+        default:
+            solana = Solana(network: .dev)
+            solanaSocket = SolanaSockets(network: .dev)
+        }
     }
 }
 

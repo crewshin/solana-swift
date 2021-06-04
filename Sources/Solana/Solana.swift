@@ -537,4 +537,41 @@ public class Solana {
             }
         }
     }
+    
+    /// Returns a recent block hash from the ledger, a fee schedule that can be used to compute the cost of submitting a transaction using it, and the last slot in which the blockhash will be valid.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getfees
+    public func getFees(commitment: Commitment? = nil, completion: @escaping (Result<Networking.Response<GetFeesResponse>, SolanaAPIError>) -> Void) {
+        
+        var params: [String: Any] = [:]
+        
+        if let commitment = commitment {
+            params["commitment"] = commitment.rawValue
+        }
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getFees",
+            "params": [
+                params
+            ]
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<GetFeesResponse>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getFeesError(message: message)))
+                } else {
+                    completion(.failure(.getFeesError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
 }

@@ -58,6 +58,7 @@
 		7E937B2725F9A0360066CA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2625F9A0360066CA84 /* Assets.xcassets */; };
 		7E937B2A25F9A0360066CA84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */; };
 		7E937B2D25F9A0360066CA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */; };
+		7EA423EB2669B0430011E098 /* GetFees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA423EA2669B0430011E098 /* GetFees.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7E937B2C25F9A0360066CA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E937B2E25F9A0360066CA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EA423EA2669B0430011E098 /* GetFees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFees.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				7E7E6386265168120044026A /* GetEpochSchedule.swift */,
 				7E7E638826516D5D0044026A /* GetFeeCalculatorForBlockhash.swift */,
 				7E7E638A2652A5CB0044026A /* GetFeeRateGovernor.swift */,
+				7EA423EA2669B0430011E098 /* GetFees.swift */,
 				7E0CE91726238342006F0E8E /* SimulateTransaction.swift */,
 			);
 			path = "Requests and Responses";
@@ -355,6 +358,7 @@
 				7E0CE94126238342006F0E8E /* ProgramSubscribe.swift in Sources */,
 				7E0CE92B26238342006F0E8E /* Commitment.swift in Sources */,
 				7E0CE92F26238342006F0E8E /* GetAccountInfo.swift in Sources */,
+				7EA423EB2669B0430011E098 /* GetFees.swift in Sources */,
 				7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */,
 				7E0CE93F26238342006F0E8E /* Transaction.swift in Sources */,
 				7E0CE94026238342006F0E8E /* TransactionError.swift in Sources */,

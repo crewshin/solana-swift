@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol WebSocketsDelegate: class {
+protocol WebSocketsDelegate: AnyObject {
     func recievedMessage<T: Codable>(message: T)
     func disconnected()
 }
