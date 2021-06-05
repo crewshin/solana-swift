@@ -59,6 +59,7 @@
 		7E937B2A25F9A0360066CA84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */; };
 		7E937B2D25F9A0360066CA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */; };
 		7EA423EB2669B0430011E098 /* GetFees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA423EA2669B0430011E098 /* GetFees.swift */; };
+		7EF9255A266BE068008E46D1 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 7EF92559266BE068008E46D1 /* CodeEditor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E6DAE9F2627259500A6F118 /* ed25519swift in Frameworks */,
+				7EF9255A266BE068008E46D1 /* CodeEditor in Frameworks */,
 				7E6DAE9B2627256700A6F118 /* Base58Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +280,7 @@
 			packageProductDependencies = (
 				7E6DAE9A2627256700A6F118 /* Base58Swift */,
 				7E6DAE9E2627259500A6F118 /* ed25519swift */,
+				7EF92559266BE068008E46D1 /* CodeEditor */,
 			);
 			productName = SolanaDemoApp;
 			productReference = 7E937B1D25F9A0330066CA84 /* SolanaDemoApp.app */;
@@ -309,6 +312,7 @@
 			packageReferences = (
 				7E6DAE992627256700A6F118 /* XCRemoteSwiftPackageReference "Base58Swift" */,
 				7E6DAE9D2627259500A6F118 /* XCRemoteSwiftPackageReference "ed25519swift" */,
+				7EF92558266BE068008E46D1 /* XCRemoteSwiftPackageReference "CodeEditor" */,
 			);
 			productRefGroup = 7E937B1E25F9A0330066CA84 /* Products */;
 			projectDirPath = "";
@@ -599,6 +603,14 @@
 				minimumVersion = 1.2.6;
 			};
 		};
+		7EF92558266BE068008E46D1 /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -611,6 +623,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7E6DAE9D2627259500A6F118 /* XCRemoteSwiftPackageReference "ed25519swift" */;
 			productName = ed25519swift;
+		};
+		7EF92559266BE068008E46D1 /* CodeEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EF92558266BE068008E46D1 /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
