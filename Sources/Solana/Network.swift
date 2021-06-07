@@ -9,17 +9,17 @@ import Foundation
 
 // MARK: - Network
 public enum Network {
-    case local(network: String)
+    case custom(network: String)
     case dev
     case test
     case main
     
     var url: URL? {
         switch self {
-        case .local(let network):
+        case .custom(let network):
             return URL(string: network)
         case .dev:
-            return URL(string: "https://devnet.solana.com")
+            return URL(string: "https://api.devnet.solana.com")
         case .test:
             return URL(string: "https://testnet.solana.com")
         case .main:

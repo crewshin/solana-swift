@@ -12,8 +12,8 @@ struct ContentView: View {
     @State var solana = Solana(network: .dev)
     @State var solanaSocket = SolanaSockets(network: .dev)
     @State private var networkSelection: Int = 1
-    @State private var localNetworkIsSelected = false
-    @State private var localNetwork = "http://localhost:8899"
+    @State private var customNetworkIsSelected = false
+    @State private var currentNetwork = Network.dev.url?.absoluteString ?? ""
     
     @EnvironmentObject var output: Output
     
@@ -28,21 +28,22 @@ struct ContentView: View {
             Section(header: Text("Network")) {
                 Picker(selection: $networkSelection, label: Text("Picker"), content: {
                     Text("Dev").tag(1)
-                    Text("Test").tag(2)
-                    Text("Main").tag(3)
-                    Text("Local").tag(4)
+                    Text("Main").tag(2)
+                    Text("Test").tag(3)
+                    Text("Custom").tag(4)
                 })
                 .pickerStyle(SegmentedPickerStyle())
                 .onChange(of: networkSelection, perform: { value in
                     setNetwork()
                 })
                 
-                if localNetworkIsSelected {
-                    TextField("http://localhost:8899", text: $localNetwork)
-                        .onChange(of: localNetwork, perform: { value in
-                            setNetwork()
-                        })
-                }
+                TextField("http://localhost:8899", text: $currentNetwork)
+                    .onChange(of: currentNetwork, perform: { value in
+                        setNetwork()
+                    })
+                    .disabled(!customNetworkIsSelected)
+                    .foregroundColor(customNetworkIsSelected ? .white : .gray)
+                    
             }
             
             Section(header: Text("Pubkey")) {
@@ -173,12 +174,10 @@ struct ContentView: View {
                     toggleModal.toggle()
                 }
             case .success(let response):
-                if let value = response.value.asDictionary {
-                    DispatchQueue.main.async {
-                        output.value = value.convertDictToJsonString()
-                    }
-                    toggleModal.toggle()
+                DispatchQueue.main.async {
+                    output.value = "\(response.value.asDictionary ?? [:])"
                 }
+                toggleModal.toggle()
             }
         }
     }
@@ -197,7 +196,7 @@ struct ContentView: View {
                 }
             case .success(let response):
                 DispatchQueue.main.async {
-                    output.value = "\(response.value)"
+                    output.value = "\(response.value.asDictionary ?? [:])"
                 }
                 toggleModal.toggle()
             }
@@ -515,23 +514,28 @@ struct ContentView: View {
         case 1:
             solana = Solana(network: .dev)
             solanaSocket = SolanaSockets(network: .dev)
-            localNetworkIsSelected = false
+            customNetworkIsSelected = false
+            currentNetwork = Network.dev.url?.absoluteString ?? ""
         case 2:
-            solana = Solana(network: .test)
-            solanaSocket = SolanaSockets(network: .test)
-            localNetworkIsSelected = false
-        case 3:
             solana = Solana(network: .main)
             solanaSocket = SolanaSockets(network: .main)
-            localNetworkIsSelected = false
+            customNetworkIsSelected = false
+            currentNetwork = Network.main.url?.absoluteString ?? ""
+        case 3:
+            solana = Solana(network: .test)
+            solanaSocket = SolanaSockets(network: .test)
+            customNetworkIsSelected = false
+            currentNetwork = Network.test.url?.absoluteString ?? ""
         case 4:
-            solana = Solana(network: .local(network: localNetwork))
-            solanaSocket = SolanaSockets(network: .local(network: localNetwork))
-            localNetworkIsSelected = true
+            solana = Solana(network: .custom(network: currentNetwork))
+            solanaSocket = SolanaSockets(network: .custom(network: currentNetwork))
+            customNetworkIsSelected = true
+            currentNetwork = "http://{ip-to-solana-cluster}:8899"
         default:
             solana = Solana(network: .dev)
             solanaSocket = SolanaSockets(network: .dev)
-            localNetworkIsSelected = false
+            customNetworkIsSelected = false
+            currentNetwork = Network.dev.url?.absoluteString ?? ""
         }
     }
 }
