@@ -26,6 +26,8 @@ public enum SolanaAPIError: Error {
     case getFeeCalculatorForBlockhashError(message: String)
     case getFeeRateGovernorError(message: String)
     case getFeesError(message: String)
+    case getFirstAvailableBlockError(message: String)
+    case getGenesisHashError(message: String)
     
     case simulateTransactionError(message: String)
 }

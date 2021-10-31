@@ -574,4 +574,60 @@ public class Solana {
             }
         }
     }
+    
+    /// Returns the slot of the lowest confirmed block that has not been purged from the ledger.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getfirstavailableblock
+    public func getFirstAvailableBlock(completion: @escaping (Result<Networking.Response<Block>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getFirstAvailableBlock"
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<Block>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getFirstAvailableBlockError(message: message)))
+                } else {
+                    completion(.failure(.getFirstAvailableBlockError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
+    
+    /// Returns the genesis hash.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getgenesishash
+    public func getGenesisHash(completion: @escaping (Result<Networking.Response<Hash>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getGenesisHash"
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<Hash>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getGenesisHashError(message: message)))
+                } else {
+                    completion(.failure(.getGenesisHashError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
 }
