@@ -630,4 +630,32 @@ public class Solana {
             }
         }
     }
+    
+    /// Returns the current health of the node.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#gethealth
+    public func getHealth(completion: @escaping (Result<Networking.Response<String>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getHealth"
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<String>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getHealthError(message: message)))
+                } else {
+                    completion(.failure(.getHealthError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
 }
