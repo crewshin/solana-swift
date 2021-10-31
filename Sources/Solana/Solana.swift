@@ -658,4 +658,32 @@ public class Solana {
             }
         }
     }
+    
+    /// Returns the identity pubkey for the current node.
+    /// https://docs.solana.com/developing/clients/jsonrpc-api#getidentity
+    public func getIdentity(completion: @escaping (Result<Networking.Response<Identity>, SolanaAPIError>) -> Void) {
+        
+        let body: [String: Any] = [
+            "jsonrpc": jsonrpc,
+            "id": 1,
+            "method": "getIdentity"
+        ]
+        
+        var request = URLRequest(url: networkURL)
+        request.httpBody = body.convertDictToJsonData()
+        request.httpMethod = HTTPRequestType.post.rawValue
+
+        networking.decodableTask(request: request) { (result: Result<Networking.Response<Identity>, Error>) in
+            switch result {
+            case .failure(let error):
+                if case let SolanaAPIError.generic(message) = error {
+                    completion(.failure(.getIdentityError(message: message)))
+                } else {
+                    completion(.failure(.getIdentityError(message: error.localizedDescription)))
+                }
+            case .success(let res):
+                completion(.success(res))
+            }
+        }
+    }
 }

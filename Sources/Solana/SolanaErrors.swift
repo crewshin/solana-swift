@@ -29,6 +29,7 @@ public enum SolanaAPIError: Error {
     case getFirstAvailableBlockError(message: String)
     case getGenesisHashError(message: String)
     case getHealthError(message: String)
+    case getIdentityError(message: String)
     
     case simulateTransactionError(message: String)
 }
