@@ -58,6 +58,9 @@
 		7E937B2725F9A0360066CA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2625F9A0360066CA84 /* Assets.xcassets */; };
 		7E937B2A25F9A0360066CA84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */; };
 		7E937B2D25F9A0360066CA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E937B2B25F9A0360066CA84 /* LaunchScreen.storyboard */; };
+		7E94A187272F3A52003852B0 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94A185272F3A52003852B0 /* Hash.swift */; };
+		7E94A188272F3A52003852B0 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94A186272F3A52003852B0 /* Block.swift */; };
+		7E94A18A272F3C33003852B0 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94A189272F3C33003852B0 /* Identity.swift */; };
 		7EA423EB2669B0430011E098 /* GetFees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA423EA2669B0430011E098 /* GetFees.swift */; };
 		7EF9255A266BE068008E46D1 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 7EF92559266BE068008E46D1 /* CodeEditor */; };
 /* End PBXBuildFile section */
@@ -114,6 +117,9 @@
 		7E937B2925F9A0360066CA84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7E937B2C25F9A0360066CA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E937B2E25F9A0360066CA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E94A185272F3A52003852B0 /* Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
+		7E94A186272F3A52003852B0 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		7E94A189272F3C33003852B0 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		7EA423EA2669B0430011E098 /* GetFees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFees.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,9 +178,11 @@
 				7E0CE90A26238342006F0E8E /* Requests and Responses */,
 				7E0CE91D26238342006F0E8E /* WebSockets */,
 				7E0CE90526238342006F0E8E /* Account.swift */,
+				7E94A186272F3A52003852B0 /* Block.swift */,
 				7E0CE90626238342006F0E8E /* Commitment.swift */,
 				7E0CE90726238342006F0E8E /* Encoding.swift */,
 				7E0CE90826238342006F0E8E /* Filter.swift */,
+				7E94A185272F3A52003852B0 /* Hash.swift */,
 				7E0CE90926238342006F0E8E /* Instruction.swift */,
 				7E0CE91826238342006F0E8E /* RewardType.swift */,
 				7E0CE91926238342006F0E8E /* RpcError.swift */,
@@ -182,6 +190,7 @@
 				7E0CE91B26238342006F0E8E /* Transaction.swift */,
 				7E0CE91C26238342006F0E8E /* TransactionError.swift */,
 				7E7E638E2652B1CF0044026A /* SlotRange.swift */,
+				7E94A189272F3C33003852B0 /* Identity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				7E0CE92D26238342006F0E8E /* Filter.swift in Sources */,
 				7E0CE94826238342006F0E8E /* WebSockets.swift in Sources */,
 				7E7E6387265168120044026A /* GetEpochSchedule.swift in Sources */,
+				7E94A18A272F3C33003852B0 /* Identity.swift in Sources */,
 				7E937B2325F9A0330066CA84 /* SceneDelegate.swift in Sources */,
 				7E0CE94226238342006F0E8E /* Network.swift in Sources */,
 				7E0CE92926238342006F0E8E /* String+.swift in Sources */,
@@ -366,9 +376,11 @@
 				7E937B2525F9A0330066CA84 /* ContentView.swift in Sources */,
 				7E0CE93F26238342006F0E8E /* Transaction.swift in Sources */,
 				7E0CE94026238342006F0E8E /* TransactionError.swift in Sources */,
+				7E94A187272F3A52003852B0 /* Hash.swift in Sources */,
 				7E0CE93026238342006F0E8E /* GetBalanace.swift in Sources */,
 				7E0CE94326238342006F0E8E /* Networking.swift in Sources */,
 				7E0CE93326238342006F0E8E /* GetClusterNodes.swift in Sources */,
+				7E94A188272F3A52003852B0 /* Block.swift in Sources */,
 				06967D5A264F977B0066A104 /* RPCResponse.swift in Sources */,
 				7E0CE92A26238342006F0E8E /* Account.swift in Sources */,
 				7E0CE92C26238342006F0E8E /* Encoding.swift in Sources */,
